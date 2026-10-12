@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Data as Material — PSAM 5170 — Spring 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5c5c5c;
+    --rule: #d9d9d9;
+    --accent: #d7261e;
+    --link: #0b57b3;
+    --table-head: #f2f2f2;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161616; --text: #e8e8e8; --muted: #a8a8a8; --rule: #3a3a3a;
+      --accent: #ff5a4f; --link: #7fb1ff; --table-head: #222222;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #161616; --text: #e8e8e8; --muted: #a8a8a8; --rule: #3a3a3a;
+    --accent: #ff5a4f; --link: #7fb1ff; --table-head: #222222;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem; line-height: 1.6;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  header { border-top: 6px solid var(--accent); padding-top: 1.5rem; margin-bottom: 2.5rem; }
+  .school { color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin: 0 0 1.5rem; }
+  h1 { font-size: 2.6rem; line-height: 1.1; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
+  .course-meta { margin: 0 0 1.25rem; font-size: 1.05rem; }
+  .details { margin: 0; color: var(--muted); }
+  h2 { font-size: 1.4rem; margin: 2.75rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.1rem; margin: 1.75rem 0 0.5rem; }
+  p { margin: 0 0 1rem; }
+  ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+  li { margin-bottom: 0.4rem; }
+  a { color: var(--link); overflow-wrap: anywhere; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { border: 1px solid var(--rule); padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+  th { background: var(--table-head); font-weight: 600; }
+  .rubric { min-width: 44rem; }
+  .outline { min-width: 36rem; }
+  .readings li { margin-bottom: 0.6rem; }
+  @media print {
+    main { max-width: none; padding: 0; }
+    a { color: inherit; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <p class="school">THE NEW SCHOOL<br>PARSONS SCHOOL OF DESIGN<br>ART, MEDIA &amp; TECHNOLOGY</p>
+  <h1>Data as Material</h1>
+  <p class="course-meta">PSAM 5170; CRN 8715<br>Spring 2027</p>
+  <p class="details">
+    Time: 4pm - 6:40pm<br>
+    Location: TBD<br>
+    <br>
+    Professor:<br>
+    Regina Flores Mir<br>
+    <a href="mailto:Regina.flores@newschool.edu">Regina.flores@newschool.edu</a><br>
+    Office hours by appointment
+  </p>
+</header>
+
+<section>
+<h2>Course Description</h2>
+<p>In this course, students will exercise comprehensive design practice and iteration, traversing areas such as visual design, storytelling, design thinking, UI/UX, prototyping, and interaction design. Across these practices, the course investigates data as a material for design. Students will engage through hands-on exercises with real data to gain a deeper understanding of how data is created and how it can shape interactions and representations. Students will develop data-driven products and services that can range from the applied and functional to the critical and poetic. The class will be accompanied by relevant readings and presentations from design theory and the sociopolitical and cultural context. In-class conversations allow students to develop critical thinking and theoretical understanding and show their unique insights of discussed topics and practices. &lt;Open to: All University graduate degree students.</p>
+</section>
+
+<section>
+<h2>Learning Outcomes</h2>
+<ul>
+  <li>Critical thinking and theoretical understanding</li>
+  <li>Understanding “design” at the broadest level, the many approaches, perspectives, and fragmentation. visual design, storytelling, design thinking, UI/UX, prototyping and interaction design</li>
+  <li>Demonstrate an understanding of the iterative making process in interaction design, using incremental methods such as prototyping, user research and evaluation to build toward more advanced work</li>
+  <li>Demonstrate a comprehension of skills, methods, techniques and processes to realize interactive systems</li>
+  <li>Demonstrate how designers use new technologies such as data processing, analysis, visualization, prediction and machine learning</li>
+</ul>
+</section>
+
+<section>
+<h2>Teaching Philosophy And Classroom Community</h2>
+<p>It is my goal that we collaborate together to create a community of learners. As a professor, I see my role as a facilitator in helping you pursue your own learning goals. I will try my best to adapt my teaching methods to make sure that the course is accessible to all students. I believe everyone has the ability to do well in this course. I am not the sole source of knowledge for this course. You are all experts in your own way. Please pursue the elements that interest you and share them with your classmates and us.</p>
+</section>
+
+<section>
+<h2>Assessable Tasks</h2>
+
+<h3>Coursework</h3>
+<p>Quantity in and of itself is not a marker of quality or growth. Students are expected to be producing work of high caliber. The work should articulate intended ideas and concepts and demonstrate an independence of thought and be original in nature. The execution of the work should effectively employ technical, formal, and/or conceptual strategies that effectively work together to communicate the intended meaning of the work.</p>
+
+<h3>Critiques, presentations, and meetings</h3>
+<p>Students are expected to possess knowledge and understanding of their own work and the issues surrounding it, and be able to articulate them. Participants are expected to be well prepared for all presentations and meetings. A lack of attendance and considered preparation overall will impact the final grade. As a contributing member of a collaborative academic group, students are expected to evaluate the work of other participants and express critique in a professional, constructive manner.</p>
+
+<h3>Assignments and projects</h3>
+<p>Thorough and on-time completion of all assignments is essential. Failure to meet deadlines, late or incomplete assignments will dramatically reduce your grade. Repeated or chronic lateness or incomplete assignments will result in a failing grade for the course.</p>
+
+<h3>1. Remix</h3>
+<p>Find an existing poem or piece of text to typeset. The text should already be written by someone else whom you don’t know, and should easily fit on one printed page. You will make 20 variations of this text. Each variation will be a separate webpage. For each variation, you will focus on changing the poem's form through shifts in composition, typography, hierarchy, scale, and pacing. The poem's content must remain intact throughout all 20 variations. Define 5 rules of changes for your poems. For each of the rules come up with 4 variations each. For example, if the first rule is scale, then invent 4 significantly different ways of scaling the text.</p>
+
+<h3>2. Track</h3>
+<p>Think about data that you produce yourself every day. That can be anything from messages with your best friend, the type of dreams you have, how often you say “Thank you” over the course of the day. What are you curious about? What do you think will reveal compelling insights you might not have had before? What has not been tracked or visualized before? Will you obtain this data manually or use data that has already been tracked (i.e. daily step count from your phone)? How do different ways of visualizing this data shape its meaning? You will develop a methodology of data collection, and then analyze &amp; visualize the data. First as a pen and paper sketch, then digitally.</p>
+
+<h3>3. Physical Data</h3>
+<p>Choose, create a dataset to translate into a data sculpture or find data that can manifest itself physically. The process by which you convert and communicate your data in physical form is up to you. For example, you could choose to create a sculpture through laser cutting layers of material, or you might create a woven tapestry. In class, we will discuss how to use javascript mapping functions to create "template" or guide files which you can then tailor towards your process and material of choice. We will also go over ways of creating 3D data visualizations that can then be potentially 3D printed. Think through the relationship between the information and the final output. Choose your materials and processes intentionally: Think about the affordances, limitations, and associations.</p>
+
+<h3>4. Data Experience</h3>
+<p>Use AI and machine learning to create a data-driven experience that would not be possible otherwise. Think of new experiences that become possible using systems such as LLMs, computer vision, generative AI for images/sound/video. Your work can be a service or product or an experiential installation. Consider the following experiential aspects: Interactivity, Immersiveness, Multisensoriality, Personalization, Participation. Your work can focus on aesthetics, functionality and/or criticality. Consider the user flow and the temporal and spatial arrangement of your experience. Make use of all available AI systems and your learnings from the previous 3 assignments.</p>
+</section>
+
+<section>
+<h2>Attendance</h2>
+<p>Grading is based on careful consideration of all factors listed above. Please be aware that unexcused and/or excessive absence from class will also impact your grade. As a graduate student you are required to maintain a 3.0 GPA to remain in good standing.</p>
+
+<h2>Deliverables</h2>
+<p>Depending on assignments.</p>
+
+<h2>Assignment Rubric</h2>
+<div class="table-wrap">
+<table class="rubric">
+  <thead>
+    <tr><th>Assessment</th><th>Needs Improvement</th><th>Satisfactory</th><th>Good</th><th>Excellent</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Concept &amp; Critique</th>
+      <td>Engages superficially with the conceptual material delivered each week.</td>
+      <td>Evidence of engagement with the conceptual material delivered each week.</td>
+      <td>Demonstrates engagement with the conceptual material beyond the minimum requirements for the course. Shows emerging fluency in utilizing concepts within their own work.</td>
+      <td>Demonstrates fluent grasp of conceptual material presented. Is able to skillfully integrate concepts into their own work. Ability to build compelling narratives around individual assignments.</td>
+    </tr>
+    <tr>
+      <th scope="row">Design</th>
+      <td>Design shows a lack of intentions or does not respond to the assignment brief.</td>
+      <td>Design elements are intentional and motivated by the assignment brief.</td>
+      <td>Design demonstrates an emerging level of care and consideration. Work shows strong potential with space for improvement.</td>
+      <td>Design demonstrates a well developed sense of aesthetics or form through execution. The work demonstrates mature consideration of the relationship between concept and execution.</td>
+    </tr>
+    <tr>
+      <th scope="row">Communication &amp; Documentation</th>
+      <td>Documentation and communication lacks intentionality and depth, is superfluous or incomplete</td>
+      <td>Projects communicate clearly and succinctly and documentation is professional.</td>
+      <td>Projects communicate clearly and intriguingly and succinctly and documentation is outstanding and displays care and aesthetic considerations.</td>
+      <td>Presentation and documentation communicates clearly and convinces with intelligent and intriguing language. Documentation materials feel on par with professional documentation in your field.</td>
+    </tr>
+    <tr>
+      <th scope="row">Technical Execution</th>
+      <td>Does not meet the stated requirements. Is missing core components of the assignment. Contains significant errors that display a lack of comprehension or understanding of the material/process.</td>
+      <td>Ability to develop working functional data translation methodology.</td>
+      <td>Demonstrates comprehension by building upon the technical concepts in submitted work. Initiates learning beyond the minimum requirements of the assignment. Attempts to develop skills and takes risk without sacrificing legibility and functionality of data translation methodology.</td>
+      <td>Creative solutions to nuanced and complex problems in programming. Data translation methodology is well documented and thought through.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Final Grade Calculation</h2>
+<div class="table-wrap">
+<table>
+  <tbody>
+    <tr><td>Attendance &amp; Class Participation</td><td>10%</td></tr>
+    <tr><td>Lab/Lecture</td><td>10%</td></tr>
+    <tr><td>Project 01: Remix</td><td>20%</td></tr>
+    <tr><td>Project 02: Track</td><td>20%</td></tr>
+    <tr><td>Project 04: Data Sculpture</td><td>20%</td></tr>
+    <tr><td>Project 05: Living Archive</td><td>20%</td></tr>
+    <tr><th scope="row">TOTAL</th><th>100%</th></tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>Course Outline</h2>
+<p>Academic calendar: <a href="https://catalog.newschool.edu/academiccalendar">https://catalog.newschool.edu/academiccalendar</a></p>
+<div class="table-wrap">
+<table class="outline">
+  <thead>
+    <tr><th>Week</th><th>Date</th><th>In class</th><th>Assignment</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>01</td><td>01/26</td><td>Introduction, Syllabus, Warm up, Readings</td><td>Remix<br>Read: Beatrice Ward the Crystal Goblet, Michael Rock, F*#k Content</td></tr>
+    <tr><td>02</td><td>02/02</td><td>Discuss lecture<br>Review Remix<br>Reading discussion</td><td>Remix updates &amp; documentation<br>Track analog<br>Read: Data Humanism<br>Watch: Data and Humans<br>Begin Data Collection</td></tr>
+    <tr><td>03</td><td>02/09</td><td>Review Remix documentation<br>Review Track data set and postcards<br>In class: Graphic Design Iteration workshop<br>Lab<br>Reading discussion</td><td>Track digital</td></tr>
+    <tr><td>04</td><td>02/16</td><td>Review Track Posters<br>Lab</td><td>Revised Poster design<br>Reading</td></tr>
+    <tr><td>05</td><td>02/23</td><td>Review Final Track Posters<br>Reading</td><td>Track final documentation<br>Physical data concept &amp; sketches<br>Biweekly reading</td></tr>
+    <tr><td>06</td><td>03/02</td><td></td><td></td></tr>
+    <tr><td>07</td><td>03/09</td><td></td><td></td></tr>
+    <tr><td>08</td><td>03/16</td><td>Spring Break</td><td></td></tr>
+    <tr><td>09</td><td>03/23</td><td>Physical data concept &amp; sketches<br>Reading discussion</td><td>Physical data prototype</td></tr>
+    <tr><td>10</td><td>03/30</td><td>Review Physical data prototypes<br>Lab</td><td>Physical data work in progress<br>Biweekly reading</td></tr>
+    <tr><td>11</td><td>04/06</td><td>Physical data work in progress<br>Reading discussion</td><td>Physical data final</td></tr>
+    <tr><td>12</td><td>04/13</td><td>Physical data final<br>Lab</td><td>Physical data final documentation<br>Data Experience: Research &amp; Concepts<br>Biweekly reading</td></tr>
+    <tr><td>13</td><td>04/20</td><td>Data Experience Research &amp; Concepts<br>Reading discussion</td><td>Data Experience: Mockup and prototype</td></tr>
+    <tr><td>14</td><td>04/27</td><td>Review Data Experience: Mockup and prototype<br>Lab</td><td>Data Experience Final<br>Biweekly reading</td></tr>
+    <tr><td>15</td><td>05/04</td><td>Data Experience Final<br>Reading discussion</td><td>Final documentation and make up</td></tr>
+    <tr><td>16</td><td>05/11</td><td>Final Presentations</td><td></td></tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>Readings</h2>
+<ul class="readings">
+  <li>Bridle, James. <em>New Dark Age: Technology and the End of the Future</em>. Updated edition, Verso, 2023.</li>
+  <li>Chen, Chun-houh, et al. <em>Handbook of Data Visualization</em>. Springer, 2008. Springer Handbooks of Computational Statistics.</li>
+  <li>D’Ignazio, Catherine, and Lauren F. Klein. <em>Data Feminism</em>. The MIT Press, 2020. &lt;Strong&gt; Ideas Series.</li>
+  <li>Dunne, Anthony, and Fiona Raby. <em>Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination</em>. The MIT Press, 2025. The MIT Press.</li>
+  <li>Noble, Safiya Umoja. <em>Algorithms of Oppression: How Search Engines Reinforce Racism</em>. New York university press, 2018.</li>
+  <li>Offenhuber, Dietmar. <em>Autographic Design: The Matter of Data in a Self-Inscribing World</em>. The MIT Press, 2024. metaLABprojects.</li>
+  <li>Rankin, William. <em>Radical Cartography: How Changing Our Maps Can Change Our World</em>. 1st ed, Penguin Publishing Group, 2025.</li>
+  <li>Thorp, Jer. <em>Living in Data: A Citizen’s Guide to a Better Information</em>. First edition., MCD, 2021.</li>
+  <li>Ṿeytsman, Eyal. <em>Forensic Architecture: Violence at the Threshold of Detectability</em>. First paperback printing, Zone Books, 2019.</li>
+  <li>Giorgia Lupi. Data Humanism: The revolution will be Visualized., Print Magazine, January 30, 2017.</li>
+  <li>Interview with Brian Foo (Data Drive DJ)<br><a href="https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/">https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/</a></li>
+  <li>Onuoha, Mimi. What is Missing is Still There. Nichons-Nous Dans L'Internet, Montreal, Canada, 2018<br><a href="https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf">https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf</a></li>
+  <li>Parish, Allison. New Interfaces for Textual Expression. 2008<br><a href="https://www.decontextualize.com/projects/nite/">https://www.decontextualize.com/projects/nite/</a></li>
+  <li>Parish, Allison. Programming Is Forgetting: Toward A New Hacker Ethic. Open Hardware Summit, 2016.<br><a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/</a></li>
+  <li>Paul Ford. What is Code? Bloomberg Businessweek, June 11, 2015.</li>
+  <li>Dan Michaelson. Change over time. <a href="https://www.linkedbyair.net/">https://www.linkedbyair.net/</a></li>
+  <li>Weiyi Li. Function as Narrative. 2014.</li>
+  <li>Daniel van der Velden. Research &amp; Destroy: A Plea for Design as Research. Metropolis M issue #2, 2006</li>
+  <li>Drew Hemment, Bill Thompson, José Luis de Vicente, Rachel Cooper. Digital Public spaces. Future Everything: 2013</li>
+  <li>Urist, Jacob. The Rise of the Data Artist. The Atlantic, 2015<br><a href="https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/">https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/</a></li>
+</ul>
+</section>
+
+<section>
+<h2>Materials and Supplies</h2>
+<p>Use of personal laptops during class is required. Cloud computing resources used during class instruction will be provided at no cost. Other than that: Camera or photographic device and use of Adobe Creative Suite</p>
+</section>
+
+<section>
+<h2>Resources</h2>
+<p>The university provides many resources to help students achieve academic and artistic excellence. These resources include:</p>
+<ul>
+  <li>The University (and associated) Libraries: <a href="http://library.newschool.edu">http://library.newschool.edu</a></li>
+  <li>The University Learning Center: <a href="http://www.newschool.edu/learning-center">http://www.newschool.edu/learning-center</a></li>
+  <li>University Disabilities Service: <a href="https://www.newschool.edu/student-disability-services/">www.newschool.edu/student-disability-services/</a></li>
+</ul>
+<p>In keeping with the university’s policy of providing equal access for students with disabilities, any student with a disability who needs academic accommodations is welcome to meet with me privately. All conversations will be kept confidential. Students requesting any accommodations will also need to contact Student Disability Service (SDS). SDS will conduct an intake and, if appropriate, the Director will provide an academic accommodation notification letter for you to bring to me. At that point, I will review the letter with you and discuss these accommodations in relation to this course.</p>
+
+<h3>Making Center</h3>
+<p>The Making Center is a constellation of shops, labs, and open workspaces that are situated across the New School to help students express their ideas in a variety of materials and methods. We have resources to help support woodworking, metalworking, ceramics and pottery work, photography and film, textiles, printmaking, 3D printing, manual and CNC machining, and more. A staff of technicians and student workers provide expertise and maintain the different shops and labs. Safety is a primary concern, so each area has policies for access, training, and etiquette that students and faculty should be familiar with. Many areas require specific orientations or trainings before access is granted. Detailed information about the resources available, as well as schedules, trainings, and policies can be found at resources.parsons.edu.</p>
+</section>
+
+<section>
+<h2>Grading Standards</h2>
+<div class="table-wrap">
+<table>
+  <tbody>
+    <tr><th scope="row">A</th><td>Work of exceptional quality</td></tr>
+    <tr><th scope="row">A-</th><td>Work of high quality</td></tr>
+    <tr><th scope="row">B+</th><td>Very good work</td></tr>
+    <tr><th scope="row">B</th><td>Good work; satisfies course requirements<br>Satisfactory completion of a course is considered to be a grade of B or higher.</td></tr>
+    <tr><th scope="row">B-</th><td>Below-average work</td></tr>
+    <tr><th scope="row">C+</th><td>Less than adequate work</td></tr>
+    <tr><th scope="row">C</th><td>Well below average work</td></tr>
+    <tr><th scope="row">C-</th><td>Poor work; lowest possible passing grade</td></tr>
+    <tr><th scope="row">F</th><td>Failure</td></tr>
+    <tr><th scope="row">GM</th><td>Grade missing for an individual</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Grades of D are not used in graduate level courses.</p>
+
+<h3>Grade of W</h3>
+<p>The grade of W may be issued by the Office of the Registrar to a student who officially withdraws from a course within the applicable deadline. There is no academic penalty, but the grade will appear on the student transcript. A grade of W may also be issued by an instructor to a graduate student (except at Parsons and Mannes) who has not completed course requirements nor arranged for an Incomplete.</p>
+
+<h3>Grade of Z</h3>
+<p>The grade of Z is issued by an instructor to a student who has not attended or not completed all required work in a course but did not officially withdraw before the withdrawal deadline. It differs from an “F,” which would indicate that the student technically completed requirements but that the level of work did not qualify for a passing grade.</p>
+
+<h3>Grades of Incomplete</h3>
+<p>The grade of I, or temporary incomplete, may be granted to a student under unusual and extenuating circumstances, such as when the student’s academic life is interrupted by a medical or personal emergency. This mark is not given automatically but only upon the student’s request and at the discretion of the instructor. A Request for Incomplete form must be completed and signed by student and instructor. The time allowed for completion of the work and removal of the “I” mark will be set by the instructor with the following limitations: [You should include one the following standards, depending on the level of your course].</p>
+<p>Work must be completed no later than one year following the end of the class. Grades of “I” not revised in the prescribed time will be recorded as a final grade of “WF” (for Parsons and Mannes graduate students) or “N” (for all other graduate students) by the Office of the Registrar. The grade of “N” does not affect the GPA but does indicate a permanent incomplete.</p>
+</section>
+
+<section>
+<h2>Divisional, Program and Class Policies</h2>
+
+<h3>Responsibility</h3>
+<p>Students are responsible for all assignments, even if they are absent. Late assignments, failure to complete the assignments for class discussion and/or critique, and lack of preparedness for in-class discussions, presentations and/or critiques will jeopardize your successful completion of this course.</p>
+
+<h3>Participation</h3>
+<p>Class participation is an essential part of class and includes: keeping up with reading, assignments, projects, contributing meaningfully to class discussions, active participation in group work, and coming to class regularly and on time.</p>
+
+<h3>Attendance</h3>
+<p>Parsons’ attendance guidelines were developed to encourage students’ success in all aspects of their academic programs. Full participation is essential to the successful completion of coursework and enhances the quality of the educational experience for all, particularly in courses where group work is integral; thus, Parsons promotes high levels of attendance. Students are expected to attend classes regularly and promptly and in compliance with the standards stated in this course syllabus.</p>
+<p>While attendance is just one aspect of active participation, absence from a significant portion of class time may prevent the successful attainment of course objectives. A significant portion of class time is generally defined as the equivalent of three weeks, or 20%, of class time. Lateness or early departure from class may be recorded as one full absence. Students may be asked to withdraw from a course if habitual absenteeism or tardiness has a negative impact on the class environment.</p>
+<p>Whether the course is a lecture, seminar or studio, faculty will assess each student’s performance against all of the assessment criteria in determining the student’s final grade.</p>
+
+<h3>Canvas</h3>
+<p>Use of Canvas may be an important resource for this class. Students should check it for announcements before coming to class each week.</p>
+
+<h3>Delays</h3>
+<p>In rare instances, I may be delayed arriving to class. If I have not arrived by the time class is scheduled to start, you must wait a minimum of thirty minutes for my arrival. In the event that I will miss class entirely, a sign will be posted at the classroom indicating your assignment for the next class meeting.</p>
+
+<h3>Electronic Devices</h3>
+<p>The use of electronic devices (phones, tablets, laptops, cameras, etc.) is permitted when the device is being used in relation to the course's work. All other uses are prohibited in the classroom and devices should be turned off before class starts.</p>
+
+<h3>Academic Honesty and Integrity</h3>
+<p>Compromising your academic integrity may lead to serious consequences, including (but not limited to) one or more of the following: failure of the assignment, failure of the course, academic warning, disciplinary probation, suspension from the university, or dismissal from the university.</p>
+<p>Students are responsible for understanding the University’s policy on academic honesty and integrity and must make use of proper citations of sources for writing papers, creating, presenting, and performing their work, taking examinations, and doing research. It is the responsibility of students to learn the procedures specific to their discipline for correctly and appropriately differentiating their own work from that of others. The full text of the policy, including adjudication procedures, is found at <a href="http://www.newschool.edu/policies/#">http://www.newschool.edu/policies/#</a> Resources regarding what plagiarism is and how to avoid it can be found on the Learning Center’s website: <a href="http://www.newschool.edu/university-learning-center/student-resources/">http://www.newschool.edu/university-learning-center/student-resources/</a></p>
+<p>The New School views “academic honesty and integrity” as the duty of every member of an academic community to claim authorship for his or her own work and only for that work, and to recognize the contributions of others accurately and completely. This obligation is fundamental to the integrity of intellectual debate, and creative and academic pursuits. Academic honesty and integrity includes accurate use of quotations, as well as appropriate and explicit citation of sources in instances of paraphrasing and describing ideas, or reporting on research findings or any aspect of the work of others (including that of faculty members and other students). Academic dishonesty results from infractions of this “accurate use”. The standards of academic honesty and integrity, and citation of sources, apply to all forms of academic work, including submissions of drafts of final papers or projects. All members of the University community are expected to conduct themselves in accord with the standards of academic honesty and integrity. Please see the complete policy in the Parsons Catalog.</p>
+
+<h3>Intellectual Property Rights</h3>
+<p><a href="http://www.newschool.edu/policies/#">http://www.newschool.edu/policies/#</a></p>
+</section>
+
+</main>
+</body>
+</html>
