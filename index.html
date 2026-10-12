@@ -56,6 +56,14 @@
   th { background: var(--table-head); font-weight: 600; }
   .rubric { min-width: 44rem; }
   .outline { min-width: 36rem; }
+  .outline td[class^="c-"] { color: #1a1a1a; }
+  .outline td[class^="c-"] a { color: #0b57b3; }
+  .c-remix { background: #ffdd03; }
+  .c-track { background: #c0f23e; }
+  .c-phys { background: #2eb0dd; }
+  .c-exp { background: #ff8000; }
+  .c-break { background: #cccccc; }
+  @media print { .outline td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
   .readings li { margin-bottom: 0.6rem; }
   @media print {
     main { max-width: none; padding: 0; }
@@ -198,22 +206,22 @@
     <tr><th>Week</th><th>Date</th><th>In class</th><th>Assignment</th></tr>
   </thead>
   <tbody>
-    <tr><td>01</td><td>01/26</td><td>Introduction, Syllabus, Warm up, Readings</td><td>Remix<br>Read: Beatrice Ward the Crystal Goblet, Michael Rock, F*#k Content</td></tr>
-    <tr><td>02</td><td>02/02</td><td>Discuss lecture<br>Review Remix<br>Reading discussion</td><td>Remix updates &amp; documentation<br>Track analog<br>Read: Data Humanism<br>Watch: Data and Humans<br>Begin Data Collection</td></tr>
-    <tr><td>03</td><td>02/09</td><td>Review Remix documentation<br>Review Track data set and postcards<br>In class: Graphic Design Iteration workshop<br>Lab<br>Reading discussion</td><td>Track digital</td></tr>
-    <tr><td>04</td><td>02/16</td><td>Review Track Posters<br>Lab</td><td>Revised Poster design<br>Reading</td></tr>
-    <tr><td>05</td><td>02/23</td><td>Review Final Track Posters<br>Reading</td><td>Track final documentation<br>Physical data concept &amp; sketches<br>Biweekly reading</td></tr>
+    <tr><td class="c-remix">01</td><td class="c-remix">01/26</td><td class="c-remix">Introduction, Syllabus, Warm up, Readings</td><td class="c-remix">Remix<br>Read: <a href="https://readings.design/PDF/The%20Crystal%20Goblet.pdf">Beatrice Ward the Crystal Goblet</a>, <a href="https://2x4.org/ideas/2009/fuck-content/">Michael Rock, F*#k Content</a></td></tr>
+    <tr><td class="c-remix">02</td><td class="c-remix">02/02</td><td class="c-remix">Discuss lecture<br>Review Remix<br>Reading discussion</td><td class="c-track">Remix updates &amp; documentation<br>Track analog<br>Read: <a href="https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb">Data Humanism</a><br>Watch: <a href="https://www.youtube.com/watch?v=dfGJDF6fJtM&amp;feature=emb_title">Data and Humans</a><br>Begin Data Collection</td></tr>
+    <tr><td class="c-track">03</td><td class="c-track">02/09</td><td class="c-track">Review Remix documentation<br>Review Track data set and postcards<br>In class: Graphic Design Iteration workshop<br>Lab<br>Reading discussion</td><td class="c-track">Track digital</td></tr>
+    <tr><td class="c-track">04</td><td class="c-track">02/16</td><td class="c-track">Review Track Posters<br>Lab</td><td class="c-track">Revised Poster design<br>Reading</td></tr>
+    <tr><td class="c-track">05</td><td class="c-track">02/23</td><td class="c-track">Review Final Track Posters<br>Reading</td><td class="c-phys">Track final documentation<br>Physical data concept &amp; sketches<br>Biweekly reading</td></tr>
     <tr><td>06</td><td>03/02</td><td></td><td></td></tr>
     <tr><td>07</td><td>03/09</td><td></td><td></td></tr>
-    <tr><td>08</td><td>03/16</td><td>Spring Break</td><td></td></tr>
-    <tr><td>09</td><td>03/23</td><td>Physical data concept &amp; sketches<br>Reading discussion</td><td>Physical data prototype</td></tr>
-    <tr><td>10</td><td>03/30</td><td>Review Physical data prototypes<br>Lab</td><td>Physical data work in progress<br>Biweekly reading</td></tr>
-    <tr><td>11</td><td>04/06</td><td>Physical data work in progress<br>Reading discussion</td><td>Physical data final</td></tr>
-    <tr><td>12</td><td>04/13</td><td>Physical data final<br>Lab</td><td>Physical data final documentation<br>Data Experience: Research &amp; Concepts<br>Biweekly reading</td></tr>
-    <tr><td>13</td><td>04/20</td><td>Data Experience Research &amp; Concepts<br>Reading discussion</td><td>Data Experience: Mockup and prototype</td></tr>
-    <tr><td>14</td><td>04/27</td><td>Review Data Experience: Mockup and prototype<br>Lab</td><td>Data Experience Final<br>Biweekly reading</td></tr>
-    <tr><td>15</td><td>05/04</td><td>Data Experience Final<br>Reading discussion</td><td>Final documentation and make up</td></tr>
-    <tr><td>16</td><td>05/11</td><td>Final Presentations</td><td></td></tr>
+    <tr><td class="c-break">08</td><td class="c-break">03/16</td><td class="c-break">Spring Break</td><td class="c-break"></td></tr>
+    <tr><td class="c-phys">09</td><td class="c-phys">03/23</td><td class="c-phys">Physical data concept &amp; sketches<br>Reading discussion</td><td class="c-phys">Physical data prototype</td></tr>
+    <tr><td class="c-phys">10</td><td class="c-phys">03/30</td><td class="c-phys">Review Physical data prototypes<br>Lab</td><td class="c-phys">Physical data work in progress<br>Biweekly reading</td></tr>
+    <tr><td class="c-phys">11</td><td class="c-phys">04/06</td><td class="c-phys">Physical data work in progress<br>Reading discussion</td><td class="c-phys">Physical data final</td></tr>
+    <tr><td class="c-phys">12</td><td class="c-phys">04/13</td><td class="c-phys">Physical data final<br>Lab</td><td class="c-exp">Physical data final documentation<br>Data Experience: Research &amp; Concepts<br>Biweekly reading</td></tr>
+    <tr><td class="c-exp">13</td><td class="c-exp">04/20</td><td class="c-exp">Data Experience Research &amp; Concepts<br>Reading discussion</td><td class="c-exp">Data Experience: Mockup and prototype</td></tr>
+    <tr><td class="c-exp">14</td><td class="c-exp">04/27</td><td class="c-exp">Review Data Experience: Mockup and prototype<br>Lab</td><td class="c-exp">Data Experience Final<br>Biweekly reading</td></tr>
+    <tr><td class="c-exp">15</td><td class="c-exp">05/04</td><td class="c-exp">Data Experience Final<br>Reading discussion</td><td class="c-exp">Final documentation and make up</td></tr>
+    <tr><td class="c-exp">16</td><td class="c-exp">05/11</td><td class="c-exp">Final Presentations</td><td class="c-exp"></td></tr>
   </tbody>
 </table>
 </div>
