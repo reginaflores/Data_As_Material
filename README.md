@@ -41,3 +41,33 @@ New readings grouped by project, each with the original reading it pairs with.
 - D'Ignazio, Catherine. *Counting Feminicide*. The MIT Press, 2024. (pairs with *Data Feminism*)
 - Mattern, Shannon. *A City Is Not a Computer*. Princeton University Press, 2021. (pairs with Hemment et al., *Digital Public Spaces*)
 - Fuller, Matthew, and Eyal Weizman. *Investigative Aesthetics*. Verso, 2021. (pairs with Weizman and van der Velden)
+
+## Essays, Articles, and Talks on AI and Data
+
+Shorter pieces for the biweekly readings and labs, grouped by theme.
+
+### How models work, shown visually
+- Bycroft, Brendan. *LLM Visualization*. Interactive, 2023. https://bbycroft.net/llm
+- Carter, Shan, Zan Armstrong, Ludwig Schubert, Ian Johnson, and Chris Olah. "Activation Atlas." *Distill*, 2019. https://distill.pub/2019/activation-atlas/
+- Google PAIR. *AI Explorables*. Interactive essays. https://pair.withgoogle.com/explorables/
+- Anthropic. "Tracing the Thoughts of a Large Language Model." 2025. https://www.anthropic.com/research/tracing-thoughts-language-model
+- Karpathy, Andrej. "Intro to Large Language Models." Talk, 2023.
+- Sutton, Richard. "The Bitter Lesson." 2019. http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+
+### Images, datasets, and what gets left out
+- Crawford, Kate, and Trevor Paglen. "Excavating AI: The Politics of Images in Machine Learning Training Sets." 2019. https://excavating.ai/
+- Steyerl, Hito. "Mean Images." *New Left Review*, no. 140/141, 2023.
+- Salvaggio, Eryk. "How to Read an AI Image." *Cybernetic Forests*, 2022.
+- Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" *FAccT*, 2021.
+
+### Art, authorship, and labor
+- Chiang, Ted. "Why A.I. Isn't Going to Make Art." *The New Yorker*, 2024.
+- Lanier, Jaron. "There Is No A.I." *The New Yorker*, 2023.
+- Herndon, Holly. "What If You Could Sing in Your Favorite Musician's Voice?" TED Talk, 2022.
+- Whittaker, Meredith. "The Steep Cost of Capture." *ACM Interactions*, 2021.
+
+### AI futures, in debate
+- Amodei, Dario. "Machines of Loving Grace." 2024. https://darioamodei.com/machines-of-loving-grace
+- Kokotajlo, Daniel, et al. *AI 2027*. Scenario, 2025. https://ai-2027.com/
+- Narayanan, Arvind, and Sayash Kapoor. "AI as Normal Technology." Knight First Amendment Institute, 2025.
+- Gebru, Timnit, and Émile P. Torres. "The TESCREAL Bundle." *First Monday*, 2024.
