@@ -6,9 +6,46 @@ Professor: Regina Flores Mir
 
 **Syllabus:** https://reginaflores.github.io/Data_As_Material/
 
-## Additional Readings by Project
+## Syllabus Readings by Project
 
-New readings grouped by project, each with the original reading it pairs with.
+The readings from the syllabus, grouped by project. Weeks 01 and 02 readings are assigned in the syllabus; the rest of the grouping is a working map.
+
+### Project 01: Remix
+- Warde, Beatrice. "The Crystal Goblet." (Week 01) https://readings.design/PDF/The%20Crystal%20Goblet.pdf
+- Rock, Michael. "F*#k Content." 2009. (Week 01) https://2x4.org/ideas/2009/fuck-content/
+- Parrish, Allison. *New Interfaces for Textual Expression*. 2008. https://www.decontextualize.com/projects/nite/
+- Parrish, Allison. "Programming Is Forgetting: Toward a New Hacker Ethic." Open Hardware Summit, 2016. http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/
+- Ford, Paul. "What Is Code?" *Bloomberg Businessweek*, June 11, 2015.
+
+### Project 02: Track
+- Lupi, Giorgia. "Data Humanism: The Revolution Will Be Visualized." *Print Magazine*, January 30, 2017. (Week 02) https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb
+- Watch: "Data and Humans." (Week 02) https://www.youtube.com/watch?v=dfGJDF6fJtM
+- Michaelson, Dan. "Change over Time." https://www.linkedbyair.net/
+- Li, Weiyi. "Function as Narrative." 2014.
+- Thorp, Jer. *Living in Data: A Citizen's Guide to a Better Information Future*. MCD, 2021.
+- Chen, Chun-houh, et al. *Handbook of Data Visualization*. Springer, 2008.
+
+### Project 03: Physical Data
+- Offenhuber, Dietmar. *Autographic Design: The Matter of Data in a Self-Inscribing World*. The MIT Press, 2024.
+- Rankin, William. *Radical Cartography: How Changing Our Maps Can Change Our World*. Penguin, 2025.
+- Interview with Brian Foo (Data-Driven DJ). https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/
+- Weizman, Eyal. *Forensic Architecture: Violence at the Threshold of Detectability*. Zone Books, 2019.
+
+### Project 04: Data Experience
+- Onuoha, Mimi. "What Is Missing Is Still There." *Nichons-Nous Dans L'Internet*, Montreal, 2018. https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf
+- Noble, Safiya Umoja. *Algorithms of Oppression: How Search Engines Reinforce Racism*. NYU Press, 2018.
+- Bridle, James. *New Dark Age: Technology and the End of the Future*. Updated edition, Verso, 2023.
+- Urist, Jacoba. "The Rise of the Data Artist." *The Atlantic*, 2015. https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/
+- Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. *Digital Public Spaces*. FutureEverything, 2013.
+- Dunne, Anthony, and Fiona Raby. *Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination*. The MIT Press, 2025.
+
+### Throughout the course
+- D'Ignazio, Catherine, and Lauren F. Klein. *Data Feminism*. The MIT Press, 2020.
+- van der Velden, Daniel. "Research & Destroy: A Plea for Design as Research." *Metropolis M*, no. 2, 2006.
+
+## Extra Readings
+
+Additional readings beyond the syllabus.
 
 ### Project 01: Remix
 - Parrish, Allison. "Language Models Can Only Write Poetry." 2021. https://posts.decontextualize.com/language-models-poetry/ (pairs with Parrish, "Programming Is Forgetting")
@@ -42,11 +79,9 @@ New readings grouped by project, each with the original reading it pairs with.
 - Mattern, Shannon. *A City Is Not a Computer*. Princeton University Press, 2021. (pairs with Hemment et al., *Digital Public Spaces*)
 - Fuller, Matthew, and Eyal Weizman. *Investigative Aesthetics*. Verso, 2021. (pairs with Weizman and van der Velden)
 
-## Essays, Articles, and Talks on AI and Data
+### Essays, articles, and talks on AI and data
 
-Shorter pieces for the biweekly readings and labs, grouped by theme.
-
-### How models work, shown visually
+#### How models work, shown visually
 - Bycroft, Brendan. *LLM Visualization*. Interactive, 2023. https://bbycroft.net/llm
 - Carter, Shan, Zan Armstrong, Ludwig Schubert, Ian Johnson, and Chris Olah. "Activation Atlas." *Distill*, 2019. https://distill.pub/2019/activation-atlas/
 - Google PAIR. *AI Explorables*. Interactive essays. https://pair.withgoogle.com/explorables/
@@ -54,19 +89,19 @@ Shorter pieces for the biweekly readings and labs, grouped by theme.
 - Karpathy, Andrej. "Intro to Large Language Models." Talk, 2023.
 - Sutton, Richard. "The Bitter Lesson." 2019. http://www.incompleteideas.net/IncIdeas/BitterLesson.html
 
-### Images, datasets, and what gets left out
+#### Images, datasets, and what gets left out
 - Crawford, Kate, and Trevor Paglen. "Excavating AI: The Politics of Images in Machine Learning Training Sets." 2019. https://excavating.ai/
 - Steyerl, Hito. "Mean Images." *New Left Review*, no. 140/141, 2023.
 - Salvaggio, Eryk. "How to Read an AI Image." *Cybernetic Forests*, 2022.
 - Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" *FAccT*, 2021.
 
-### Art, authorship, and labor
+#### Art, authorship, and labor
 - Chiang, Ted. "Why A.I. Isn't Going to Make Art." *The New Yorker*, 2024.
 - Lanier, Jaron. "There Is No A.I." *The New Yorker*, 2023.
 - Herndon, Holly. "What If You Could Sing in Your Favorite Musician's Voice?" TED Talk, 2022.
 - Whittaker, Meredith. "The Steep Cost of Capture." *ACM Interactions*, 2021.
 
-### AI futures, in debate
+#### AI futures, in debate
 - Amodei, Dario. "Machines of Loving Grace." 2024. https://darioamodei.com/machines-of-loving-grace
 - Kokotajlo, Daniel, et al. *AI 2027*. Scenario, 2025. https://ai-2027.com/
 - Narayanan, Arvind, and Sayash Kapoor. "AI as Normal Technology." Knight First Amendment Institute, 2025.
