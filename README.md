@@ -13,7 +13,7 @@ Professor: Regina Flores Mir
 - Rock, Michael. "F*#k Content." 2009. (Week 01) https://2x4.org/ideas/2009/fuck-content/
 - Parrish, Allison. *New Interfaces for Textual Expression*. 2008. https://www.decontextualize.com/projects/nite/
 - Parrish, Allison. "Programming Is Forgetting: Toward a New Hacker Ethic." Open Hardware Summit, 2016. http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/
-- Ford, Paul. "What Is Code?" *Bloomberg Businessweek*, June 11, 2015.
+- Ford, Paul. "What Is Code?" *Bloomberg Businessweek*, June 11, 2015. https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
 
 ### Project 02: Track
 - Lupi, Giorgia. "Data Humanism: The Revolution Will Be Visualized." *Print Magazine*, January 30, 2017. (Week 02) https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb
