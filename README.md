@@ -8,8 +8,6 @@ Professor: Regina Flores Mir
 
 ## Syllabus Readings by Project
 
-The readings from the syllabus, grouped by project. Weeks 01 and 02 readings are assigned in the syllabus; the rest of the grouping is a working map.
-
 ### Project 01: Remix
 - Warde, Beatrice. "The Crystal Goblet." (Week 01) https://readings.design/PDF/The%20Crystal%20Goblet.pdf
 - Rock, Michael. "F*#k Content." 2009. (Week 01) https://2x4.org/ideas/2009/fuck-content/
