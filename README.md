@@ -108,7 +108,7 @@ Additional readings beyond the syllabus. Entries marked "(Spring 2025 syllabus)"
 - Herndon, Holly. "What If You Could Sing in Your Favorite Musician's Voice?" TED Talk, 2022.
 - Whittaker, Meredith. "The Steep Cost of Capture." *ACM Interactions*, 2021.
 
-#### AI futures, in debate
+#### Important Current AI Writing
 - Amodei, Dario. "Machines of Loving Grace." 2024. https://darioamodei.com/machines-of-loving-grace
 - Kokotajlo, Daniel, et al. *AI 2027*. Scenario, 2025. https://ai-2027.com/
 - Narayanan, Arvind, and Sayash Kapoor. "AI as Normal Technology." Knight First Amendment Institute, 2025.
