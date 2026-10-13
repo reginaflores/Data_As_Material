@@ -25,19 +25,19 @@ The readings from the syllabus, grouped by project. Weeks 01 and 02 readings are
 - Thorp, Jer. *Living in Data: A Citizen's Guide to a Better Information Future*. MCD, 2021.
 - Chen, Chun-houh, et al. *Handbook of Data Visualization*. Springer, 2008.
 
-### Project 03: Feed
-- Interview with Brian Foo (Data-Driven DJ). https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/
-- Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. *Digital Public Spaces*. FutureEverything, 2013.
-
-### Project 04: Physical Data
+### Project 03: Physical Data
 - Offenhuber, Dietmar. *Autographic Design: The Matter of Data in a Self-Inscribing World*. The MIT Press, 2024.
 - Rankin, William. *Radical Cartography: How Changing Our Maps Can Change Our World*. Penguin, 2025.
+- Interview with Brian Foo (Data-Driven DJ). https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/
 - Weizman, Eyal. *Forensic Architecture: Violence at the Threshold of Detectability*. Zone Books, 2019.
 
-### Project 05: Data Experience
+### Project 04: Living Archive
 - Onuoha, Mimi. "What Is Missing Is Still There." *Nichons-Nous Dans L'Internet*, Montreal, 2018. https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf
+
+### Project 05: Data Experience
 - Noble, Safiya Umoja. *Algorithms of Oppression: How Search Engines Reinforce Racism*. NYU Press, 2018.
 - Bridle, James. *New Dark Age: Technology and the End of the Future*. Updated edition, Verso, 2023.
+- Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. *Digital Public Spaces*. FutureEverything, 2013.
 - Urist, Jacoba. "The Rise of the Data Artist." *The Atlantic*, 2015. https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/
 - Dunne, Anthony, and Fiona Raby. *Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination*. The MIT Press, 2025.
 
@@ -60,19 +60,20 @@ Additional readings beyond the syllabus. Entries marked "(Spring 2025 syllabus)"
 - Cairo, Alberto. *The Art of Insight*. Wiley, 2023. (pairs with Chen et al.)
 - Wilke, Claus O. *Fundamentals of Data Visualization*. 2019. https://clauswilke.com/dataviz/ (reference for the digital poster stage)
 
-### Project 03: Feed
-- Evans, Benedict. "Mobile Is Eating the World." Presentation, WSJD conference, October 28, 2014. (Spring 2025 syllabus)
-
-### Project 04: Physical Data
+### Project 03: Physical Data
 - Posavec, Stefanie, and Miriam Quick. *I Am a Book. I Am a Portal to the Universe.* Particular Books, 2020. (a book that is itself a data object)
 - Huron, Samuel, et al., editors. *Making with Data*. CRC Press, 2022. (pairs with Offenhuber, *Autographic Design*)
 - Dragicevic, Pierre, and Yvonne Jansen. *List of Physical Visualizations*. http://dataphys.org/list/ (archive of precedents)
 - Crawford, Kate, and Vladan Joler. *Calculating Empires*. 2023. https://calculatingempires.net/ (also bridges to Project 04)
 
+### Project 04: Living Archive
+- Ọnụọha, Mimi. *Ground Truths*. Film, 2025. (pairs with Onuoha, "What Is Missing Is Still There")
+- The, Richard (TheGreenEyl). *Liquid Archive*. MIT Museum. https://richardthe.com/projects/LiquidArchive (machine learning finds connections across a museum collection)
+- The Metropolitan Museum of Art. *Collection API*. https://metmuseum.github.io/ (free Open Access data and images for 470,000+ artworks; no API key)
+
 ### Project 05: Data Experience
 - Dunne, Anthony, and Fiona Raby. *Speculative Everything: Design, Fiction, and Social Dreaming*. The MIT Press, 2013. (Spring 2025 syllabus)
 - Foster, Nick. "The Future Mundane." *Core77*, October 7, 2013. (Spring 2025 syllabus)
-- Ọnụọha, Mimi. *Ground Truths*. Film, 2025. (pairs with Onuoha, "What Is Missing Is Still There")
 - Anadol, Refik. *Machine Dreams: Rainforest*. Dataland, Los Angeles, 2026. (pairs with Urist, "The Rise of the Data Artist")
 - Herndon, Holly, and Mat Dryhurst. *The Call*. Serpentine, 2024. (a contrasting model built on consent)
 - Chiang, Ted. "ChatGPT Is a Blurry JPEG of the Web." *The New Yorker*, 2023. (pairs with Ford, "What Is Code?")
@@ -82,6 +83,7 @@ Additional readings beyond the syllabus. Entries marked "(Spring 2025 syllabus)"
 - Hao, Karen. *Empire of AI*. Penguin Press, 2025. (the labor and power behind the tools)
 
 ### Throughout the course
+- Evans, Benedict. "Mobile Is Eating the World." Presentation, WSJD conference, October 28, 2014. (Spring 2025 syllabus)
 - D'Ignazio, Catherine. *Counting Feminicide*. The MIT Press, 2024. (pairs with *Data Feminism*)
 - Mattern, Shannon. *A City Is Not a Computer*. Princeton University Press, 2021. (pairs with Hemment et al., *Digital Public Spaces*)
 - Fuller, Matthew, and Eyal Weizman. *Investigative Aesthetics*. Verso, 2021. (pairs with Weizman and van der Velden)
