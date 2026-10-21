@@ -2,268 +2,373 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Data as Material — PSAM 5170 — Spring 2027</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base target="_blank">
+<title>Data as Material</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
-    --muted: #5c5c5c;
-    --rule: #d9d9d9;
-    --accent: #d7261e;
-    --link: #0b57b3;
-    --table-head: #f2f2f2;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #ffffff; --surface: #ffffff; --fg: #16181d; --muted: #5d6470; --faint: #8a909b;
+    --line: #d2d6dc; --line-strong: #9fa6b2; --link: #e42a1d; --brand: #e42a1d; --ink: #000;
+    --remix: #fff1cc; --remix-a: #ffbb00;
+    --track: #dcffd1; --track-a: #32ff00;
+    --phys:  #dcf5ff; --phys-a:  #64d7ff;
+    --arch:  #eee5ff; --arch-a:  #b48cff;
+    --exp:   #ffe3cc; --exp-a:   #ff6e00;
+    --off:   #f1f2f4; --off-a:   #a3a8b1;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #161616; --text: #e8e8e8; --muted: #a8a8a8; --rule: #3a3a3a;
-      --accent: #ff5a4f; --link: #7fb1ff; --table-head: #222222;
+      --bg: #111316; --surface: #181b20; --fg: #eceef1; --muted: #a4abb6; --faint: #7c8390;
+      --line: #2a2e35; --line-strong: #3a3f48; --link: #ff6b5f; --brand: #ff4b3e; --ink: #fff;
+      --remix: #3a2b00; --remix-a: #ffbb00; --track: #103800; --track-a: #32ff00;
+      --phys: #0b3240; --phys-a: #64d7ff; --arch: #2b2045; --arch-a: #b48cff;
+      --exp: #3f1c00; --exp-a: #ff6e00;
+      --off: #22252b; --off-a: #6b717c;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #161616; --text: #e8e8e8; --muted: #a8a8a8; --rule: #3a3a3a;
-    --accent: #ff5a4f; --link: #7fb1ff; --table-head: #222222;
+    --bg: #111316; --surface: #181b20; --fg: #eceef1; --muted: #a4abb6; --faint: #7c8390;
+    --line: #2a2e35; --line-strong: #3a3f48; --link: #ff6b5f; --brand: #ff4b3e; --ink: #fff;
+    --remix: #3a2b00; --remix-a: #ffbb00; --track: #103800; --track-a: #32ff00;
+    --phys: #0b3240; --phys-a: #64d7ff; --arch: #2b2045; --arch-a: #b48cff;
+      --exp: #3f1c00; --exp-a: #ff6e00;
+    --off: #22252b; --off-a: #6b717c;
   }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
-  *, *::before, *::after { box-sizing: inherit; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: "Public Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem; line-height: 1.6;
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 15.5px/1.65 Inter, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; }
+  main { max-width: 880px; margin: 0 auto; padding: 56px 16px 120px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; word-break: break-word; }
+  ul { padding-left: 20px; margin: 0 0 14px; } li { margin-bottom: 6px; }
+
+  /* Header / brand (after catalog.newschool.edu) */
+  .lockup { display: flex; flex-direction: column; gap: 12px; margin: 0 0 48px; }
+  .lockup .logo { width: 240px; max-width: 100%; height: auto; display: block; fill: var(--ink); }
+  .lockup .logo .logo-red { fill: #e82e21; }
+  .lockup .rest { font-size: 15px; color: var(--brand); }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--fg); margin: 0 0 18px; }
+  h1 { font-size: clamp(36px, 7vw, 56px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 700; margin: 0 0 10px; }
+  .subtitle { font-size: 17px; color: var(--muted); margin: 0 0 36px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); column-gap: 24px; border-top: 1px solid var(--line-strong); margin: 0 0 8px; }
+  .meta div { padding: 12px 0; border-bottom: 1px solid var(--line-strong); }
+  .meta dt { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: 2px; }
+  .meta dd { margin: 0; font-weight: 500; }
+  .tbd { color: var(--faint); font-weight: 400; }
+
+  /* Sections */
+  h2 { font-size: 22px; letter-spacing: -0.01em; font-weight: 700; line-height: 1.3; color: var(--brand);
+    margin: 56px 0 14px; }
+  h3 { font-size: 15.5px; font-weight: 600; margin: 26px 0 6px; }
+
+  /* Projects */
+  .projects { display: grid; gap: 14px; margin: 20px 0 8px; }
+  .project { background: transparent; border: 0; border-top: 1px solid var(--line-strong); border-left: 4px solid var(--a);
+    padding: 18px 20px 6px; }
+  .project h3 { margin: 0 0 8px; display: flex; align-items: center; gap: 10px; font-size: 17px; }
+  .project .num { font-size: 12px; font-weight: 700; color: #000; background: var(--a);
+    border-radius: 999px; padding: 2px 9px; letter-spacing: .04em; }
+  .project .choose { color: var(--muted); margin-bottom: 12px; }
+  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 0 0 10px; }
+  .path { padding: 0 20px 0 0; }
+  .path + .path { padding: 0 0 0 20px; border-left: 1px solid var(--line-strong); }
+  .path h4 { margin: 0 0 6px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .path p { font-size: 14.5px; }
+  @media (max-width: 640px) {
+    .paths { grid-template-columns: 1fr; }
+    .path, .path + .path { padding: 0; border-left: 0; }
+    .path + .path { padding-top: 14px; border-top: 1px solid var(--line-strong); }
   }
-  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-  header { border-top: 6px solid var(--accent); padding-top: 1.5rem; margin-bottom: 2.5rem; }
-  .school { color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin: 0 0 1.5rem; }
-  h1 { font-size: 2.6rem; line-height: 1.1; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
-  .course-meta { margin: 0 0 1.25rem; font-size: 1.05rem; }
-  .details { margin: 0; color: var(--muted); }
-  h2 { font-size: 1.4rem; margin: 2.75rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
-  h3 { font-size: 1.1rem; margin: 1.75rem 0 0.5rem; }
-  p { margin: 0 0 1rem; }
-  ul { padding-left: 1.25rem; margin: 0 0 1rem; }
-  li { margin-bottom: 0.4rem; }
-  a { color: var(--link); overflow-wrap: anywhere; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
-  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
-  th, td { border: 1px solid var(--rule); padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
-  th { background: var(--table-head); font-weight: 600; }
-  .rubric { min-width: 44rem; }
-  .outline { min-width: 36rem; }
-  .outline td[class^="c-"] { color: #1a1a1a; }
-  .outline td[class^="c-"] a { color: #0b57b3; }
-  .c-remix { background: #ffdd03; }
-  .c-track { background: #c0f23e; }
-  .c-phys { background: #2eb0dd; }
-  .c-exp { background: #ff8000; }
-  .c-arch { background: #dc73ff; }
-  .c-break { background: #cccccc; }
-  @media print { .outline td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
-  .readings li { margin-bottom: 0.6rem; }
+  .project.remix { --a: var(--remix-a); --t: var(--remix); }
+  .project.track { --a: var(--track-a); --t: var(--track); }
+  .project.phys  { --a: var(--phys-a);  --t: var(--phys); }
+  .project.arch  { --a: var(--arch-a);  --t: var(--arch); }
+  .project.exp   { --a: var(--exp-a);   --t: var(--exp); }
+
+  /* Tables */
+  .scroll { overflow-x: auto; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; line-height: 1.5; }
+  th, td { padding: 12px 16px; vertical-align: top; text-align: left; border-bottom: 1px solid var(--line-strong); }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 13px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--fg);
+    background: transparent; border-bottom: 1px solid var(--line-strong); padding-top: 14px; padding-bottom: 14px; }
+  .rubric { min-width: 720px; }
+  .rubric td { border-right: 1px solid var(--line); } .rubric td:last-child { border-right: 0; }
+  .rubric td:first-child { font-weight: 600; width: 150px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 4px 0 16px; font-size: 13.5px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend i { width: 12px; height: 12px; border-radius: 3px; background: var(--a); }
+
+  /* Course outline */
+  .outline { min-width: 560px; table-layout: fixed; }
+  .outline td { border-bottom: 2px solid var(--surface); }
+  .outline td:nth-child(1), .outline td:nth-child(2) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .outline td:nth-child(1) { font-weight: 700; width: 64px; box-shadow: inset 4px 0 0 var(--a); padding-left: 18px; }
+  .outline td:nth-child(2) { width: 76px; color: var(--muted); font-weight: 500; }
+  .outline th:nth-child(1) { width: 64px; } .outline th:nth-child(2) { width: 72px; }
+  .outline td a { color: inherit; text-decoration-color: currentColor; }
+  .outline td.split { padding: 0; }
+  .outline td.split > div { padding: 12px 16px; }
+  .outline td.split > div + div { border-top: 2px solid var(--surface); }
+  .outline .remix { background: var(--remix); --a: var(--remix-a); }
+  .outline .track { background: var(--track); --a: var(--track-a); }
+  .outline .phys  { background: var(--phys);  --a: var(--phys-a); }
+  .outline .arch  { background: var(--arch);  --a: var(--arch-a); }
+  .outline .exp   { background: var(--exp);   --a: var(--exp-a); }
+  .outline .off   { background: var(--off);   --a: var(--off-a); color: var(--muted); }
+  .outline tr.break td:nth-child(3) { font-weight: 600; letter-spacing: .04em; font-size: 12.5px; text-transform: uppercase; }
+  .legend .remix { --a: var(--remix-a); --t: var(--remix); } .legend .track { --a: var(--track-a); --t: var(--track); }
+  .legend .phys { --a: var(--phys-a); --t: var(--phys); } .legend .exp { --a: var(--exp-a); --t: var(--exp); }
+  .legend .arch { --a: var(--arch-a); --t: var(--arch); } .legend .off { --a: var(--off-a); --t: var(--off); }
+
+  .outline ul { list-style: none; padding: 0; margin: 0; }
+  .outline li { margin: 0 0 4px; } .outline li:last-child { margin-bottom: 0; }
+  .outline ul.topics li { position: relative; padding-left: 14px; }
+  .outline ul.topics li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--a); }
+  .outline ul.tasks label { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; }
+  .outline ul.tasks input { flex: none; margin: 3px 0 0; width: 14px; height: 14px; accent-color: var(--a); cursor: pointer; }
+  .outline ul.tasks input:checked + span { text-decoration: line-through; opacity: .6; }
+  .outline td.split > div.remix { --a: var(--remix-a); } .outline td.split > div.track { --a: var(--track-a); }
+  .outline td.split > div.phys { --a: var(--phys-a); } .outline td.split > div.arch { --a: var(--arch-a); } .outline td.split > div.exp { --a: var(--exp-a); }
+
+  .outline .grp { margin: 0 0 4px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .outline ul.tasks + .grp { margin-top: 12px; }
+
+  .view-toggle { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px; margin: 0 0 18px; }
+  .view-toggle button { font: inherit; font-size: 13px; font-weight: 600; color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 5px 14px; cursor: pointer; }
+  .view-toggle button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  .view-toggle button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+
+  /* Grades */
+  .grades { display: grid; grid-template-columns: 1fr auto; max-width: 520px; background: transparent;
+    border: 0; border-top: 1px solid var(--line-strong); border-radius: 0; overflow: hidden; }
+  .grades span { padding: 10px 16px; border-bottom: 1px solid var(--line-strong); }
+  .grades span:nth-child(even) { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+  .grades .total { font-weight: 700; }
+  dl.gs { display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; margin: 0 0 10px; }
+  dl.gs dt { font-weight: 700; } dl.gs dd { margin: 0; color: var(--muted); }
+  .outline .opt { display: inline-block; margin-top: 4px; font-size: 12.5px; opacity: .75; }
+  .outline li.opt { display: list-item; margin-top: 0; }
+  .outline .lib { font-size: 12px; opacity: .7; white-space: nowrap; }
+  .aside { color: var(--muted); font-style: italic; font-size: 14.5px; }
+  .refs .ap { margin-top: 22px; }
+  .refs p { padding-left: 22px; text-indent: -22px; margin-bottom: 10px; font-size: 14.5px; }
+  /* Appendix */
+  .appendix .ap { margin: 28px 0 0; padding-left: 16px; border-left: 4px solid var(--a); }
+  .appendix .ap h3 { display: flex; align-items: center; gap: 10px; font-size: 17px; margin: 0 0 6px; }
+  .appendix .num { font-size: 12px; font-weight: 700; color: #000; background: var(--a); border-radius: 999px; padding: 2px 9px; }
+  .appendix .remix { --a: var(--remix-a); --t: var(--remix); } .appendix .track { --a: var(--track-a); --t: var(--track); }
+  .appendix .phys { --a: var(--phys-a); --t: var(--phys); } .appendix .exp { --a: var(--exp-a); --t: var(--exp); }
+  .appendix .arch { --a: var(--arch-a); --t: var(--arch); } .appendix .all { --a: var(--line-strong); --t: var(--off); }
+  .appendix h4 { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin: 22px 0 2px; }
+  .res { list-style: none; padding: 0; margin: 0; }
+  .res li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .res li:last-child { border-bottom: 0; }
+  .res .kind { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
+  .res .cite { margin: 0 0 4px; font-size: 14.5px; }
+  .res .note { margin: 0; font-size: 14px; color: var(--muted); }
+  @media (max-width: 600px) { .res li { grid-template-columns: 1fr; gap: 2px; } }
+  footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--faint); }
+
+  @media (max-width: 600px) { main { padding-top: 36px; } h2 { margin-top: 48px; } }
   @media print {
-    main { max-width: none; padding: 0; }
-    a { color: inherit; }
+    body { background: #fff; font-size: 11pt; } main { max-width: none; padding: 0; }
+    h2 { break-after: avoid; } tr, .project { break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
+
+  /* Timeline strip (option A) */
+  .timeline { display: grid; grid-template-columns: 136px repeat(16, minmax(24px, 1fr)); row-gap: 8px; min-width: 540px; margin: 8px 0 6px; align-items: center; }
+  .tl-corner, .tl-wk { font-size: 11.5px; font-weight: 600; letter-spacing: .06em; color: var(--faint); text-transform: uppercase; grid-row: 1; }
+  .tl-wk { text-align: center; font-variant-numeric: tabular-nums; }
+  .tl-wk.tl-off { text-decoration: line-through; }
+  .tl-shade { align-self: stretch; margin: -4px 2px; background: repeating-linear-gradient(135deg, var(--off) 0 4px, transparent 4px 8px); border-radius: 3px; }
+  .tl-name { grid-column: 1; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .tl-name .num { font-size: 11px; font-weight: 700; color: #000; background: var(--a); border-radius: 999px; padding: 1px 7px; }
+  .tl-bar { height: 22px; border-radius: 999px; background: var(--a); margin: 0 3px; display: flex; align-items: center; padding: 0 10px; position: relative; z-index: 1; }
+  .tl-bar span { font-size: 11px; font-weight: 600; color: #000; white-space: nowrap; }
+  .timeline .remix, .tl-name .remix { --a: var(--remix-a); --t: var(--remix); } .timeline .track { --a: var(--track-a); --t: var(--track); }
+  .timeline .phys { --a: var(--phys-a); --t: var(--phys); } .timeline .arch { --a: var(--arch-a); --t: var(--arch); } .timeline .exp { --a: var(--exp-a); --t: var(--exp); }
+  .tl-note { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+  .tl-note i { width: 18px; height: 12px; border-radius: 3px; background: repeating-linear-gradient(135deg, var(--off-a) 0 2px, transparent 2px 5px); }
+  /* Quieter table: no full-cell tints, colored edges only */
+  .outline .remix, .outline .track, .outline .phys, .outline .arch, .outline .exp { background: transparent; }
+  .outline td { border-bottom: 1px solid var(--line); }
+  .outline td.split > div + div { border-top: 1px dashed var(--line); }
+  .outline td.split > div { box-shadow: inset 3px 0 0 var(--a); }
+  .outline td:nth-child(1) { color: var(--fg); }
 </style>
 </head>
 <body>
 <main>
+<header class="lockup"><svg class="logo" viewBox="0 0 224 48.3" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parsons School of Design, The New School">
 
-<header>
-  <p class="school">THE NEW SCHOOL<br>PARSONS SCHOOL OF DESIGN<br>ART, MEDIA &amp; TECHNOLOGY</p>
-  <h1>Data as Material</h1>
-  <p class="course-meta">PSAM 5170 - Data as Material (Section A, CRN 8715)<br>Spring 2027</p>
-  <p class="details">
-    Time: Monday, 4pm - 6:40pm<br>
-    Location: TBD<br>
-    <br>
-    Professor:<br>
-    Regina Flores Mir<br>
-    <a href="mailto:Regina.flores@newschool.edu">Regina.flores@newschool.edu</a><br>
-    Office hours by appointment
-  </p>
-</header>
+<path d="M4,23.4v-3h21v3"/>
+<path d="M15,8.4h7v4h3v-12h-3v5h-7v-5h-3v12h3V8.4z M35,10h-5V8h4V5.4h-4v-2h5v-3h-8v12h8V10z M43,5h0.5l7.1,7.5H54V0.4h-3v7.7h-0.5
+	l-7-7.7H40v12h3V5z M64,10h-6V8h5V5.4h-5v-2h6v-3h-9v12h9V10z M73.1,12.4l2.5-9.3h0.8l2.8,9.3h5.3l3.5-12h-3.4l-2.3,9.2h-0.7
+	l-2.8-9.2h-5.5l-2.4,9.2h-0.7l-2.8-9.2H64l3.8,12H73.1z M97.5,9.3c0,0.6-0.3,1-1.7,1c-1.4,0-2.8-0.3-4.1-0.9l-0.1,2.7
+	c1.3,0.5,2.7,0.8,4.2,0.8c3.2,0,4.7-1.9,4.7-4c0-4-6.2-2.9-6.2-4.9c0-0.6,0.6-1,1.6-1c1.3,0,2.5,0.3,3.7,0.9l0.6-2.6
+	c-1.4-0.6-2.8-0.9-4.2-0.9c-2.6,0-4.6,1.4-4.6,3.9C91.4,8.6,97.5,7.5,97.5,9.3z M107.3,12.9c1.1,0.1,2.1-0.1,3.1-0.4V9.7
+	c-0.9,0.3-1.8,0.5-2.7,0.4c-1.8,0.2-3.4-1.2-3.6-3c0-0.2,0-0.3,0-0.5c-0.2-1.8,1.1-3.4,2.9-3.5c0.2,0,0.4,0,0.6,0
+	c0.9,0,1.8,0.1,2.7,0.4l0.3-2.7c-1-0.3-2-0.4-3-0.3c-3.4-0.3-6.5,2.2-6.8,5.6c-0.3,3.4,2.2,6.5,5.6,6.8c0.2,0,0.4,0,0.6,0H107.3z
+	 M115,8.4h7v4h3v-12h-3v5h-7v-5h-3v12h3V8.4z M133.5,12.9c3.9,0,7.1-2.1,7.1-6.3c0-4.1-3-6.2-7.1-6.2s-7.2,2.3-7.2,6.2
+	C126.4,10.8,129.6,12.9,133.5,12.9z M133.5,2.9c2.3,0,4,1.2,4,3.6c0,2.6-1.7,3.8-4.1,3.8c-2.4,0-4-1.2-4-3.7S131.2,2.9,133.5,2.9z
+	 M148.3,12.9c3.9,0,7.1-2.1,7.1-6.3c0-4.1-3-6.2-7.1-6.2c-4.1,0-7.1,2.3-7.1,6.2C141.2,10.8,144.4,12.9,148.3,12.9z M148.3,2.9
+	c2.3,0,4,1.2,4,3.6c0,2.6-1.7,3.8-4.1,3.8c-2.4,0-4-1.2-4-3.7S146,2.9,148.3,2.9z M169,9.4h-10v-9h-3v12h13V9.4z M4,12.4h3v-9h4v-3
+	H0v3h4V12.4z"/>
+<path d="M4,15.4h220v3H4V15.4z"/>
+<path class="logo-red" d="M27,20.4h20.9c6.7,0,10.1,4.3,10.1,9.2c0,5.9-4.8,9.5-10.1,9.5H33.8v8.3H27V20.4z M33.8,26.5v6.9h13.2
+	c3.3,0,4.1-1.9,4.1-3.6c0-1.4-0.7-3.3-4.1-3.3H33.8z"/>
+<path class="logo-red" d="M72.6,42.2h-9.9l-1.9,5.2h-7.2l10.8-27h7l10.2,27h-7.3L72.6,42.2z M64.6,36.7h6.2l-2.9-9L64.6,36.7z"/>
+<path class="logo-red" d="M82.7,20.4h12.8c6,0,9,4.3,9,9.2c0.1,1.7-0.4,3.4-1.2,4.9c-0.8,1.5-2.1,2.7-3.5,3.5l4.7,9.4h-7.6l-3.7-8.3h-3.7
+	v8.3h-6.8V20.4z M89.4,26.5v6.9h4.4c0.5,0,1,0,1.4-0.2c0.5-0.2,0.9-0.4,1.2-0.8c0.4-0.3,0.6-0.8,0.8-1.2c0.2-0.5,0.3-0.9,0.2-1.4
+	c0-1.4-1.1-3.3-3.7-3.3H89.4z"/>
+<path class="logo-red" d="M106.1,28.6c0-5.7,4.6-8.8,10.4-8.8c3.4,0,7.2,0.9,9.3,2.1l-1.3,5.7c-2.5-1.4-5.4-2.1-8.2-2.1
+	c-2.1,0-3.5,0.8-3.5,2.2c0,4.4,13.8,1.9,13.8,11c0,4.8-3.4,9.1-10.6,9.1c-3.1,0-6.5-0.4-9.3-1.7l0.3-6.2c2.9,1.4,6.1,2.1,9.3,2.1
+	c3,0,3.7-1,3.7-2.3C119.9,35.8,106.1,38.2,106.1,28.6z"/>
+<path class="logo-red" d="M143.2,19.9c9.3,0,16,4.8,16,13.9c0,9.5-7.2,14.2-16,14.2c-8.8,0-16.1-4.8-16.1-14.1
+	C127.1,25,133.7,19.9,143.2,19.9z M143.1,42.3c5.3,0,9.1-2.7,9.1-8.6c0-5.4-3.8-8.1-9.1-8.1c-5.3,0-9.1,2.6-9.1,8.3
+	C134.1,39.5,137.9,42.3,143.1,42.3z"/>
+<path class="logo-red" d="M169.1,28.5h-1.7v18.9h-6.8v-27h9.5l17.9,17h1.7v-17h6.8v27h-8.2L169.1,28.5z"/>
+<path class="logo-red" d="M198.9,28.6c0-5.7,5.4-8.8,12.6-8.8c4.6,0,9.4,0.9,11.5,2.1l-1.3,5.7c-2.3-1.4-6.8-2.1-10.4-2.1
+	c-3.9,0-5.7,0.8-5.7,2.2c0,4.7,18.2,1,18.2,11c0,4.8-4.1,9.1-12.8,9.1c-3.9,0-8.7-0.4-11.5-1.7l0.3-6.2c2.8,1.4,6.9,2.1,11.5,2.1
+	c4.4,0,5.9-1,5.9-2.3C217.1,35.5,198.9,39,198.9,28.6z"/>
+</svg><span class="rest">Art, Media &amp; Technology</span></header>
 
-<section>
+<p class="eyebrow">Graduate Course · Open to all university graduate students</p>
+
+<h1>Data as Material</h1>
+<p class="subtitle">PSAM 5170 · Section A · Spring 2027 · Regina Flores Mir</p>
+<dl class="meta">
+  <div><dt>Course</dt><dd>PSAM 5170 · Section A · CRN 8715</dd></div>
+  <div><dt>Meets</dt><dd>Mondays, 4:00 – 6:40 p.m.</dd></div>
+  <div><dt>Location</dt><dd><span class="tbd">TBD</span></dd></div>
+  <div><dt>Professor</dt><dd>Regina Flores Mir</dd></div>
+  <div><dt>Email</dt><dd><a target="_self" href="mailto:regina.flores@newschool.edu">regina.flores@newschool.edu</a></dd></div>
+  <div><dt>Office hours</dt><dd>By appointment</dd></div>
+</dl>
+
 <h2>Course Description</h2>
-<p>In this course, students will exercise comprehensive design practice and iteration, traversing areas such as visual design, storytelling, design thinking, UI/UX, prototyping, and interaction design. Across these practices, the course investigates data as a material for design. Students will engage through hands-on exercises with real data to gain a deeper understanding of how data is created and how it can shape interactions and representations. Students will develop data-driven products and services that can range from the applied and functional to the critical and poetic. The class will be accompanied by relevant readings and presentations from design theory and the sociopolitical and cultural context. In-class conversations allow students to develop critical thinking and theoretical understanding and show their unique insights of discussed topics and practices. &lt;Open to: All University graduate degree students.</p>
-</section>
+<p>In this course, students will exercise comprehensive design practice and iteration, traversing areas such as visual design, storytelling, design thinking, UI/UX, prototyping, and interaction design. Across these practices, the course investigates data as a material for design. Students will engage through hands-on exercises with real data to gain a deeper understanding of how data is created and how it can shape interactions and representations. Students will develop data-driven products and services that can range from the applied and functional to the critical and poetic. The class will be accompanied by relevant readings and presentations from design theory and the sociopolitical and cultural context. In-class conversations allow students to develop critical thinking and theoretical understanding and show their unique insights of discussed topics and practices. Open to: All University graduate degree students.</p>
 
-<section>
 <h2>Learning Outcomes</h2>
 <ul>
   <li>Critical thinking and theoretical understanding</li>
-  <li>Understanding “design” at the broadest level, the many approaches, perspectives, and fragmentation. visual design, storytelling, design thinking, UI/UX, prototyping and interaction design</li>
+  <li>Understanding “design” at the broadest level, the many approaches, perspectives, and fragmentation: visual design, storytelling, design thinking, UI/UX, prototyping and interaction design</li>
   <li>Demonstrate an understanding of the iterative making process in interaction design, using incremental methods such as prototyping, user research and evaluation to build toward more advanced work</li>
   <li>Demonstrate a comprehension of skills, methods, techniques and processes to realize interactive systems</li>
   <li>Demonstrate how designers use new technologies such as data processing, analysis, visualization, prediction and machine learning</li>
 </ul>
-</section>
 
-<section>
 <h2>Teaching Philosophy And Classroom Community</h2>
 <p>It is my goal that we collaborate together to create a community of learners. As a professor, I see my role as a facilitator in helping you pursue your own learning goals. I will try my best to adapt my teaching methods to make sure that the course is accessible to all students. I believe everyone has the ability to do well in this course. I am not the sole source of knowledge for this course. You are all experts in your own way. Please pursue the elements that interest you and share them with your classmates and us.</p>
-</section>
 
-<section>
 <h2>Assessable Tasks</h2>
-
 <h3>Coursework</h3>
 <p>Quantity in and of itself is not a marker of quality or growth. Students are expected to be producing work of high caliber. The work should articulate intended ideas and concepts and demonstrate an independence of thought and be original in nature. The execution of the work should effectively employ technical, formal, and/or conceptual strategies that effectively work together to communicate the intended meaning of the work.</p>
-
 <h3>Critiques, presentations, and meetings</h3>
 <p>Students are expected to possess knowledge and understanding of their own work and the issues surrounding it, and be able to articulate them. Participants are expected to be well prepared for all presentations and meetings. A lack of attendance and considered preparation overall will impact the final grade. As a contributing member of a collaborative academic group, students are expected to evaluate the work of other participants and express critique in a professional, constructive manner.</p>
-
 <h3>Assignments and projects</h3>
 <p>Thorough and on-time completion of all assignments is essential. Failure to meet deadlines, late or incomplete assignments will dramatically reduce your grade. Repeated or chronic lateness or incomplete assignments will result in a failing grade for the course.</p>
 
-<h3>1. Remix</h3>
-<p>Find an existing poem or piece of text to typeset. The text should already be written by someone else whom you don’t know, and should easily fit on one printed page. You will make 20 variations of this text. Each variation will be a separate webpage. For each variation, you will focus on changing the poem's form through shifts in composition, typography, hierarchy, scale, and pacing. The poem's content must remain intact throughout all 20 variations. Define 5 rules of changes for your poems. For each of the rules come up with 4 variations each. For example, if the first rule is scale, then invent 4 significantly different ways of scaling the text.</p>
+<h2>Projects</h2>
+<div class="projects">
+<article class="project remix"><h3><span class="num">01</span>Remix</h3><p>Find an existing poem or piece of text to typeset. The text should already be written by someone else whom you don’t know, and should easily fit on one printed page. You will make 20 variations of this text. Each variation will be a separate webpage. For each variation, you will focus on changing the poem's form through shifts in composition, typography, hierarchy, scale, and pacing. The poem's content must remain intact throughout all 20 variations. Define 5 rules of changes for your poems. For each of the rules come up with 4 variations each. For example, if the first rule is scale, then invent 4 significantly different ways of scaling the text.</p></article>
+<article class="project track"><h3><span class="num">02</span>Track or Feed</h3><p class="choose">Choose one of two paths.</p><div class="paths"><div class="path"><h4>Path A · Track</h4><p>Think about data that you produce yourself every day. That can be anything from messages with your best friend, the type of dreams you have, how often you say “Thank you” over the course of the day. What are you curious about? What do you think will reveal compelling insights you might not have had before? What has not been tracked or visualized before? Will you obtain this data manually or use data that has already been tracked (i.e. daily step count from your phone)? How do different ways of visualizing this data shape its meaning? You will develop a methodology of data collection, and then analyze &amp; visualize the data. First as a pen and paper sketch, then digitally.</p></div><div class="path"><h4>Path B · Feed</h4><p>Create a system that uses a live feed of data. Make that external data feed functional in a way the original source didn’t expect. Examples of live data feeds are: webcam feeds, social media feeds, weather feeds, stock feeds, Craigslist, news feeds. What kind of system can you create using the feed? What is possible?</p><p>Your final project can be a website but does not have to be. You can look at potential other outcomes that would make sense, such as screens, or objects in space. All aspects of your project will be evaluated: concept, design, presentation, execution, technical difficulty. If some technical aspects are not achievable within the time frame, this can be made up with design, presentation and visualization.</p></div></div></article>
+<article class="project phys"><h3><span class="num">03</span>Physical Data</h3><p>Choose, create a dataset to translate into a data sculpture or find data that can manifest itself physically. The process by which you convert and communicate your data in physical form is up to you. For example, you could choose to create a sculpture through laser cutting layers of material, or you might create a woven tapestry. In class, we will discuss how to use javascript mapping functions to create "template" or guide files which you can then tailor towards your process and material of choice. We will also go over ways of creating 3D data visualizations that can then be potentially 3D printed. Think through the relationship between the information and the final output. Choose your materials and processes intentionally: Think about the affordances, limitations, and associations.</p></article>
+<article class="project arch"><h3><span class="num">04</span>Living Archive</h3><p>Use AI and machine learning to get a deeper understanding of a data set and create a visualization that would otherwise not be possible. Identify what existing machine learning services exist to analyze archives. Then explore what archives might be relevant for you. Image archives from museums or other institutions, text archives from libraries, or data archives? Use the existing machine learning models to create a new data set (i.e. extracting poses from a collection of photographs from a museum using ml5.js BodyPose). What did you notice in the dataset? Did the dataset you created reveal anything unexpected about the original data? Use this information to create a visualization showcasing insights gained from this process.</p></article>
+<article class="project exp"><h3><span class="num">05</span>Data Experience</h3><p>Use AI and machine learning to create a data-driven experience that would not be possible otherwise. Think of new experiences that become possible using systems such as LLMs, computer vision, generative AI for images/sound/video. Your work can be a service or product or an experiential installation. Consider the following experiential aspects: Interactivity, Immersiveness, Multisensoriality, Personalization, Participation. Your work can focus on aesthetics, functionality and/or criticality. Consider the user flow and the temporal and spatial arrangement of your experience. Make use of all available AI systems and your learnings from the previous 4 assignments.</p></article>
+</div>
 
-<h3>2. Track</h3>
-<p>Think about data that you produce yourself every day. That can be anything from messages with your best friend, the type of dreams you have, how often you say “Thank you” over the course of the day. What are you curious about? What do you think will reveal compelling insights you might not have had before? What has not been tracked or visualized before? Will you obtain this data manually or use data that has already been tracked (i.e. daily step count from your phone)? How do different ways of visualizing this data shape its meaning? You will develop a methodology of data collection, and then analyze &amp; visualize the data. First as a pen and paper sketch, then digitally.</p>
-
-<h3>3. Physical Data</h3>
-<p>Choose, create a dataset to translate into a data sculpture or find data that can manifest itself physically. The process by which you convert and communicate your data in physical form is up to you. For example, you could choose to create a sculpture through laser cutting layers of material, or you might create a woven tapestry. In class, we will discuss how to use javascript mapping functions to create "template" or guide files which you can then tailor towards your process and material of choice. We will also go over ways of creating 3D data visualizations that can then be potentially 3D printed. Think through the relationship between the information and the final output. Choose your materials and processes intentionally: Think about the affordances, limitations, and associations.</p>
-
-<h3>4. Living Archive</h3>
-<p>Use AI and machine learning to get a deeper understanding of a data set and create a visualization that would otherwise not be possible. Identify what existing machine learning services exist to analyze archives. Then explore what archives might be relevant for you. Image archives from museums or other institutions, text archives from libraries, or data archives? Use the existing machine learning models to create a new data set (i.e. extracting poses from a collection of photographs from a museum using ml5.js BodyPose). What did you notice in the dataset? Did the dataset you created reveal anything unexpected about the original data? Use this information to create a visualization showcasing insights gained from this process.</p>
-
-<h3>5. Data Experience</h3>
-<p>Use AI and machine learning to create a data-driven experience that would not be possible otherwise. Think of new experiences that become possible using systems such as LLMs, computer vision, generative AI for images/sound/video. Your work can be a service or product or an experiential installation. Consider the following experiential aspects: Interactivity, Immersiveness, Multisensoriality, Personalization, Participation. Your work can focus on aesthetics, functionality and/or criticality. Consider the user flow and the temporal and spatial arrangement of your experience. Make use of all available AI systems and your learnings from the previous 4 assignments.</p>
-</section>
-
-<section>
-<h2>Attendance</h2>
+<h3>Attendance</h3>
 <p>Grading is based on careful consideration of all factors listed above. Please be aware that unexcused and/or excessive absence from class will also impact your grade. As a graduate student you are required to maintain a 3.0 GPA to remain in good standing.</p>
-
-<h2>Deliverables</h2>
+<h3>Deliverables</h3>
 <p>Depending on assignments.</p>
 
 <h2>Assignment Rubric</h2>
-<div class="table-wrap">
+<div class="scroll">
 <table class="rubric">
-  <thead>
-    <tr><th>Assessment</th><th>Needs Improvement</th><th>Satisfactory</th><th>Good</th><th>Excellent</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Concept &amp; Critique</th>
-      <td>Engages superficially with the conceptual material delivered each week.</td>
-      <td>Evidence of engagement with the conceptual material delivered each week.</td>
-      <td>Demonstrates engagement with the conceptual material beyond the minimum requirements for the course. Shows emerging fluency in utilizing concepts within their own work.</td>
-      <td>Demonstrates fluent grasp of conceptual material presented. Is able to skillfully integrate concepts into their own work. Ability to build compelling narratives around individual assignments.</td>
-    </tr>
-    <tr>
-      <th scope="row">Design</th>
-      <td>Design shows a lack of intentions or does not respond to the assignment brief.</td>
-      <td>Design elements are intentional and motivated by the assignment brief.</td>
-      <td>Design demonstrates an emerging level of care and consideration. Work shows strong potential with space for improvement.</td>
-      <td>Design demonstrates a well developed sense of aesthetics or form through execution. The work demonstrates mature consideration of the relationship between concept and execution.</td>
-    </tr>
-    <tr>
-      <th scope="row">Communication &amp; Documentation</th>
-      <td>Documentation and communication lacks intentionality and depth, is superfluous or incomplete</td>
-      <td>Projects communicate clearly and succinctly and documentation is professional.</td>
-      <td>Projects communicate clearly and intriguingly and succinctly and documentation is outstanding and displays care and aesthetic considerations.</td>
-      <td>Presentation and documentation communicates clearly and convinces with intelligent and intriguing language. Documentation materials feel on par with professional documentation in your field.</td>
-    </tr>
-    <tr>
-      <th scope="row">Technical Execution</th>
-      <td>Does not meet the stated requirements. Is missing core components of the assignment. Contains significant errors that display a lack of comprehension or understanding of the material/process.</td>
-      <td>Ability to develop working functional data translation methodology.</td>
-      <td>Demonstrates comprehension by building upon the technical concepts in submitted work. Initiates learning beyond the minimum requirements of the assignment. Attempts to develop skills and takes risk without sacrificing legibility and functionality of data translation methodology.</td>
-      <td>Creative solutions to nuanced and complex problems in programming. Data translation methodology is well documented and thought through.</td>
-    </tr>
-  </tbody>
+  <tr><th>Assessment</th><th>Needs Improvement</th><th>Satisfactory</th><th>Good</th><th>Excellent</th></tr>
+  <tr><td>Concept &amp; Critique</td><td>Engages superficially with the conceptual material delivered each week.</td><td>Evidence of engagement with the conceptual material delivered each week.</td><td>Demonstrates engagement with the conceptual material beyond the minimum requirements for the course. Shows emerging fluency in utilizing concepts within their own work.</td><td>Demonstrates fluent grasp of conceptual material presented. Is able to skillfully integrate concepts into their own work. Ability to build compelling narratives around individual assignments.</td></tr>
+  <tr><td>Design</td><td>Design shows a lack of intentions or does not respond to the assignment brief.</td><td>Design elements are intentional and motivated by the assignment brief.</td><td>Design demonstrates an emerging level of care and consideration. Work shows strong potential with space for improvement.</td><td>Design demonstrates a well developed sense of aesthetics or form through execution. The work demonstrates mature consideration of the relationship between concept and execution.</td></tr>
+  <tr><td>Communication &amp; Documentation</td><td>Documentation and communication lacks intentionality and depth, is superfluous or incomplete</td><td>Projects communicate clearly and succinctly and documentation is professional.</td><td>Projects communicate clearly and intriguingly and succinctly and documentation is outstanding and displays care and aesthetic considerations.</td><td>Presentation and documentation communicates clearly and convinces with intelligent and intriguing language. Documentation materials feel on par with professional documentation in your field.</td></tr>
+  <tr><td>Technical Execution</td><td>Does not meet the stated requirements. Is missing core components of the assignment. Contains significant errors that display a lack of comprehension or understanding of the material/process.</td><td>Ability to develop working functional data translation methodology.</td><td>Demonstrates comprehension by building upon the technical concepts in submitted work. Initiates learning beyond the minimum requirements of the assignment. Attempts to develop skills and takes risk without sacrificing legibility and functionality of data translation methodology.</td><td>Creative solutions to nuanced and complex problems in programming. Data translation methodology is well documented and thought through.</td></tr>
 </table>
 </div>
 
 <h2>Final Grade Calculation</h2>
-<div class="table-wrap">
-<table>
-  <tbody>
-    <tr><td>Attendance &amp; Class Participation</td><td>10%</td></tr>
-    <tr><td>Lab/Lecture</td><td>10%</td></tr>
-    <tr><td>Project 01: Remix</td><td>15%</td></tr>
-    <tr><td>Project 02: Track</td><td>15%</td></tr>
-    <tr><td>Project 03: Physical Data</td><td>15%</td></tr>
-    <tr><td>Project 04: Living Archive</td><td>15%</td></tr>
-    <tr><td>Project 05: Data Experience</td><td>20%</td></tr>
-    <tr><th scope="row">TOTAL</th><th>100%</th></tr>
-  </tbody>
-</table>
+<div class="grades">
+  <span>Attendance &amp; Class Participation</span><span>10%</span>
+  <span>Lab/Lecture</span><span>10%</span>
+  <span>Project 01: Remix</span><span>15%</span>
+  <span>Project 02: Track</span><span>15%</span>
+  <span>Project 03: Physical Data</span><span>15%</span>
+  <span>Project 04: Living Archive</span><span>15%</span>
+  <span>Project 05: Data Experience</span><span>20%</span>
+  <span class="total">TOTAL</span><span class="total">100%</span>
 </div>
-</section>
 
-<section>
 <h2>Course Outline</h2>
-<p>Academic calendar: <a href="https://catalog.newschool.edu/academiccalendar">https://catalog.newschool.edu/academiccalendar</a></p>
-<div class="table-wrap">
+<p class="aside" style="font-style:normal">16 weeks · Mondays, January 25 – May 10, 2027 · 14 class meetings. Dates follow the <a href="https://catalog.newschool.edu/academiccalendar">New School Academic Calendar</a>.</p>
+<div class="scroll"><div class="timeline">
+  <div class="tl-corner">Week</div><div class="tl-wk" style="grid-column:2" title="">01</div><div class="tl-wk" style="grid-column:3" title="">02</div><div class="tl-wk" style="grid-column:4" title="">03</div><div class="tl-wk tl-off" style="grid-column:5" title="Presidents’ Day">04</div><div class="tl-wk" style="grid-column:6" title="">05</div><div class="tl-wk" style="grid-column:7" title="">06</div><div class="tl-wk" style="grid-column:8" title="">07</div><div class="tl-wk tl-off" style="grid-column:9" title="Spring break">08</div><div class="tl-wk" style="grid-column:10" title="">09</div><div class="tl-wk" style="grid-column:11" title="">10</div><div class="tl-wk" style="grid-column:12" title="">11</div><div class="tl-wk" style="grid-column:13" title="">12</div><div class="tl-wk" style="grid-column:14" title="">13</div><div class="tl-wk" style="grid-column:15" title="">14</div><div class="tl-wk" style="grid-column:16" title="">15</div><div class="tl-wk" style="grid-column:17" title="">16</div><div class="tl-shade" style="grid-column:5;grid-row:2 / span 5"></div><div class="tl-shade" style="grid-column:9;grid-row:2 / span 5"></div><div class="tl-name" style="grid-row:2"><span class="num remix">01</span>Remix</div><div class="tl-bar remix" style="grid-row:2;grid-column:2 / 5"><span>Wk 1–3</span></div><div class="tl-name" style="grid-row:3"><span class="num track">02</span>Track/Feed</div><div class="tl-bar track" style="grid-row:3;grid-column:3 / 7"><span>Wk 2–5</span></div><div class="tl-name" style="grid-row:4"><span class="num phys">03</span>Physical Data</div><div class="tl-bar phys" style="grid-row:4;grid-column:6 / 11"><span>Wk 5–9</span></div><div class="tl-name" style="grid-row:5"><span class="num arch">04</span>Living Archive</div><div class="tl-bar arch" style="grid-row:5;grid-column:10 / 14"><span>Wk 9–12</span></div><div class="tl-name" style="grid-row:6"><span class="num exp">05</span>Data Experience</div><div class="tl-bar exp" style="grid-row:6;grid-column:13 / 18"><span>Wk 12–16</span></div>
+</div></div>
+<p class="tl-note"><i></i>No class</p>
+<div class="scroll">
 <table class="outline">
-  <thead>
-    <tr><th>Week</th><th>Date</th><th>In class</th><th>Assignment</th></tr>
-  </thead>
-  <tbody>
-    <tr><td class="c-remix">01</td><td class="c-remix">01/25</td><td class="c-remix">Introduction, Syllabus, Warm up, Readings</td><td class="c-remix">Remix<br>Read: <a href="https://readings.design/PDF/The%20Crystal%20Goblet.pdf">Beatrice Ward the Crystal Goblet</a>, <a href="https://2x4.org/ideas/2009/fuck-content/">Michael Rock, F*#k Content</a></td></tr>
-    <tr><td class="c-remix">02</td><td class="c-remix">02/01</td><td class="c-remix">Discuss lecture<br>Review Remix<br>Reading discussion<br>Lecture: Quantified Self and data tracking<br>Lab: Ways to track your own data</td><td class="c-track">Remix updates &amp; documentation<br>Track analog<br>Read: <a href="https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb">Data Humanism</a><br>Watch: <a href="https://www.youtube.com/watch?v=dfGJDF6fJtM&amp;feature=emb_title">Data and Humans</a><br>Begin Data Collection</td></tr>
-    <tr><td class="c-track">03</td><td class="c-track">02/08</td><td class="c-track">Review Remix documentation<br>Review Track data set and postcards<br>In class: Graphic Design Iteration workshop<br>Lab: Visualization in Figma<br>Reading discussion</td><td class="c-track">Track digital</td></tr>
-    <tr><td class="c-break">04</td><td class="c-break">02/15</td><td class="c-break">NO SCHOOL PRESIDENT’S DAY</td><td class="c-break"></td></tr>
-    <tr><td class="c-track">05</td><td class="c-track">02/22</td><td class="c-track">Review Track Posters<br>Reading<br>Lecture: Data sculptures<br>Lab: Digital fabrication overview</td><td class="c-phys">Revised Poster design<br>Track final documentation<br>Physical data concept &amp; sketches<br>Biweekly reading</td></tr>
-    <tr><td class="c-phys">06</td><td class="c-phys">03/01</td><td class="c-phys">Physical data concept &amp; sketches<br>Reading discussion<br>Lab: p5.js Using map() and if statements to translate data</td><td class="c-phys">Physical data prototype</td></tr>
-    <tr><td class="c-phys">07</td><td class="c-phys">03/08</td><td class="c-phys">Review Physical data prototypes<br>Lab: Using data in 3D software (Blender + Python)</td><td class="c-phys">Physical data final<br>Biweekly reading</td></tr>
-    <tr><td class="c-break">08</td><td class="c-break">03/15</td><td class="c-break">Spring Break</td><td class="c-break"></td></tr>
-    <tr><td class="c-phys">09</td><td class="c-phys">03/22</td><td class="c-phys">Physical data final<br>Reading discussion<br>Lecture: Living Archives<br>Lab: Overview of existing ML models to use</td><td class="c-arch">Physical data final documentation<br>Living Archive: Archive research and ML concepts</td></tr>
-    <tr><td class="c-arch">10</td><td class="c-arch">03/29</td><td class="c-arch">Review Living Archive research<br>Lab: Finding and using APIs (museum and archive collection APIs)</td><td class="c-arch">Living Archive: Mockup and prototype<br>Biweekly reading</td></tr>
-    <tr><td class="c-arch">11</td><td class="c-arch">04/05</td><td class="c-arch">Review Living Archive mockup/prototypes<br>Reading discussion<br>Lab: Pose detection with ml5.js BodyPose and in-browser models with LiteRT.js</td><td class="c-arch">Living Archive final</td></tr>
-    <tr><td class="c-arch">12</td><td class="c-arch">04/12</td><td class="c-arch">Review Living Archive final</td><td class="c-exp">Living Archive final documentation<br>Data Experience: Research &amp; Concepts<br>Biweekly reading</td></tr>
-    <tr><td class="c-exp">13</td><td class="c-exp">04/19</td><td class="c-exp">Data Experience Research &amp; Concepts<br>Reading discussion</td><td class="c-exp">Data Experience: Mockup and prototype</td></tr>
-    <tr><td class="c-exp">14</td><td class="c-exp">04/26</td><td class="c-exp">Review Data Experience: Mockup and prototype<br>Lab</td><td class="c-exp">Data Experience Final<br>Biweekly reading</td></tr>
-    <tr><td class="c-exp">15</td><td class="c-exp">05/03</td><td class="c-exp">Data Experience Final<br>Reading discussion</td><td class="c-exp">Final documentation and make up</td></tr>
-    <tr><td class="c-exp">16</td><td class="c-exp">05/10</td><td class="c-exp">Final Presentations<br>Guest crits</td><td class="c-exp"></td></tr>
-  </tbody>
+  <tr><th>Week</th><th>Date</th><th>In class</th><th>Assignment</th></tr>
+  <tr><td class="remix">01</td><td class="remix">01/25</td><td class="remix"><ul class="topics"><li>Introduction, Syllabus, Warm up, Readings</li></ul></td>
+      <td class="remix"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w01-0"><span>Remix</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w01-r1"><span><a href="https://readings.design/PDF/The%20Crystal%20Goblet.pdf">Beatrice Warde, The Crystal Goblet</a></span></label></li><li><label><input type="checkbox" data-k="w01-r2"><span><a href="https://2x4.org/ideas/2009/fuck-content/">Michael Rock, F*#k Content</a></span></label></li><li><label><input type="checkbox" data-k="w01-r3"><span><a href="https://www.decontextualize.com/projects/nite/">Allison Parrish, New Interfaces for Textual Expression</a></span></label></li><li><label><input type="checkbox" data-k="w01-r4"><span><a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">Paul Ford, <em>What is Code?</em></a></span></label></li><li><label><input type="checkbox" data-k="w01-r5"><span><a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">Allison Parrish, Programming Is Forgetting</a></span></label></li></ul></td></tr>
+  <tr><td class="remix">02</td><td class="remix">02/01</td><td class="remix"><ul class="topics"><li>Review Remix</li><li>Reading discussion</li><li>Lecture: Quantified Self and data tracking</li><li>Lab: Ways to track your own data</li></ul></td>
+      <td class="split track"><div class="remix"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w02-remix-0"><span>Remix updates &amp; documentation</span></label></li></ul></div><div class="track"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w02-track-0"><span>Track/Feed analog</span></label></li><li><label><input type="checkbox" data-k="w02-track-3"><span>Begin Data Collection</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w02-r1"><span><a href="https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb">Data Humanism</a></span></label></li><li><label><input type="checkbox" data-k="w02-r2"><span>Watch: <a href="https://www.youtube.com/watch?v=dfGJDF6fJtM">Jer Thorp, Data &amp; Humans: A Love Story</a></span></label></li><li><label><input type="checkbox" data-k="w02-r3"><span><a href="https://data-feminism.mitpress.mit.edu/pub/h1w0nbqp">D’Ignazio &amp; Klein, <em>Data Feminism</em> (ch. 4, “What Gets Counted Counts”)</a></span></label></li><li><label><input type="checkbox" data-k="w02-r4"><span>Jer Thorp, <em>Living in Data</em></span></label></li></ul></div></td></tr>
+  <tr><td class="track">03</td><td class="track">02/08</td><td class="split track"><div class="remix"><ul class="topics"><li>Review Remix documentation</li></ul></div><div class="track"><ul class="topics"><li>Review Track/Feed data set and postcards</li><li>In class: Graphic Design Iteration workshop</li><li>Lab: Visualization in Figma</li><li>Reading discussion</li></ul></div></td>
+      <td class="track"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w03-0"><span>Track/Feed digital</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w03-r1"><span><a href="https://www.linkedbyair.net/">Dan Michaelson, Change over time</a></span></label></li><li><label><input type="checkbox" data-k="w03-r2"><span><a href="https://veryinteractive.net/pdfs/li-functionasnarrative.pdf">Weiyi Li, <em>Function as Narrative</em></a></span></label></li></ul></td></tr>
+  <tr class="break"><td class="off">04</td><td class="off">02/15</td><td class="off">Presidents’ Day · University closed</td>
+      <td class="off"></td></tr>
+  <tr><td class="track">05</td><td class="track">02/22</td><td class="split phys"><div class="track"><ul class="topics"><li>Review Track/Feed Posters</li><li>Reading</li></ul></div><div class="phys"><ul class="topics"><li>Lecture: Data sculptures</li><li>Lab: Digital fabrication overview</li></ul></div></td>
+      <td class="split phys"><div class="track"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w05-track-0"><span>Revised Poster design</span></label></li><li><label><input type="checkbox" data-k="w05-track-1"><span>Track/Feed final documentation</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w05-r1"><span>Chen et al., <em>Handbook of Data Visualization</em></span></label></li></ul></div><div class="phys"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w05-phys-0"><span>Physical data concept &amp; sketches</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w05-r2"><span><a href="https://direct.mit.edu/books/monograph/5706/Autographic-DesignThe-Matter-of-Data-in-a-Self">Dietmar Offenhuber, <em>Autographic Design</em> (introduction)</a> <span class="lib">(library login)</span></span></label></li><li><label><input type="checkbox" data-k="w05-r3"><span>William Rankin, <em>Radical Cartography</em> (introduction)</span></label></li></ul></div></td></tr>
+  <tr><td class="phys">06</td><td class="phys">03/01</td><td class="phys"><ul class="topics"><li>Physical data concept &amp; sketches</li><li>Reading discussion</li><li>Lab: p5.js Using map() and if statements to translate data</li></ul></td>
+      <td class="phys"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w06-0"><span>Physical data prototype</span></label></li></ul></td></tr>
+  <tr><td class="phys">07</td><td class="phys">03/08</td><td class="phys"><ul class="topics"><li>Review Physical data prototypes</li><li>Lab: Using data in 3D software (Blender + Python)</li></ul></td>
+      <td class="phys"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w07-0"><span>Physical data final</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w07-r1"><span>Eyal Weizman, <em>Forensic Architecture</em> (introduction)</span></label></li><li><label><input type="checkbox" data-k="w07-r2"><span>Listen: <a href="https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/">Interview with Brian Foo (Data-Driven DJ)</a></span></label></li><li><label><input type="checkbox" data-k="w07-r3"><span><a href="https://metropolism.com/en/feature/research-destroy/">Daniel van der Velden, <em>Research &amp; Destroy</em></a></span></label></li></ul></td></tr>
+  <tr class="break"><td class="off">08</td><td class="off">03/15</td><td class="off">Spring Break · No classes (03/15–03/21)</td>
+      <td class="off"></td></tr>
+  <tr><td class="phys">09</td><td class="phys">03/22</td><td class="split arch"><div class="phys"><ul class="topics"><li>Physical data final</li><li>Reading discussion</li></ul></div><div class="arch"><ul class="topics"><li>Lecture: Living Archives</li><li>Lab: Overview of existing ML models to use</li></ul></div></td>
+      <td class="split arch"><div class="phys"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w09-phys-0"><span>Physical data final documentation</span></label></li></ul></div><div class="arch"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w09-arch-0"><span>Living Archive: Archive research and ML concepts</span></label></li></ul></div></td></tr>
+  <tr><td class="arch">10</td><td class="arch">03/29</td><td class="arch"><ul class="topics"><li>Review Living Archive research</li><li>Lab: Finding and using APIs (museum and archive collection APIs)</li></ul></td>
+      <td class="arch"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w10-0"><span>Living Archive: Mockup and prototype</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w10-r1"><span><a href="https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf">Mimi Onuoha, What is Missing is Still There</a></span></label></li></ul></td></tr>
+  <tr><td class="arch">11</td><td class="arch">04/05</td><td class="arch"><ul class="topics"><li>Review Living Archive mockup/prototypes</li><li>Reading discussion</li><li>Lab: Pose detection with ml5.js BodyPose and in-browser models with LiteRT.js</li></ul></td>
+      <td class="arch"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w11-0"><span>Living Archive final</span></label></li></ul></td></tr>
+  <tr><td class="arch">12</td><td class="arch">04/12</td><td class="arch"><ul class="topics"><li>Review Living Archive final</li></ul></td>
+      <td class="split exp"><div class="arch"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w12-arch-0"><span>Living Archive final documentation</span></label></li></ul></div><div class="exp"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w12-exp-0"><span>Data Experience: Research &amp; Concepts</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w12-r1"><span>James Bridle, <em>New Dark Age</em> (ch. 1, “Chasm”)</span></label></li><li><label><input type="checkbox" data-k="w12-r2"><span><a href="https://direct.mit.edu/books/book/5962/Not-Here-Not-NowSpeculative-Thought-Impossibility">Dunne &amp; Raby, <em>Not Here, Not Now</em> (introduction)</a> <span class="lib">(library login)</span></span></label></li><li><label><input type="checkbox" data-k="w12-r3"><span><a href="https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/">Jacoba Urist, The Rise of the Data Artist</a></span></label></li></ul></div></td></tr>
+  <tr><td class="exp">13</td><td class="exp">04/19</td><td class="exp"><ul class="topics"><li>Data Experience Research &amp; Concepts</li><li>Reading discussion</li></ul></td>
+      <td class="exp"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w13-0"><span>Data Experience: Mockup and prototype</span></label></li></ul></td></tr>
+  <tr><td class="exp">14</td><td class="exp">04/26</td><td class="exp"><ul class="topics"><li>Review Data Experience: Mockup and prototype</li><li>Lab</li><li class="opt">Optional: NYC art show visit with curator, or NYT visit with Graphics Editor Umi Syam</li></ul></td>
+      <td class="exp"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w14-0"><span>Data Experience Final</span></label></li></ul><p class="grp">Read</p><ul class="tasks"><li><label><input type="checkbox" data-k="w14-r1"><span><a href="https://www.jstor.org/stable/j.ctt1pwt9w5">Safiya Umoja Noble, <em>Algorithms of Oppression</em> (introduction)</a> <span class="lib">(library login)</span></span></label></li><li><label><input type="checkbox" data-k="w14-r2"><span><a href="https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf">Hemment et al., <em>Digital Public Spaces</em></a></span></label></li></ul></td></tr>
+  <tr><td class="exp">15</td><td class="exp">05/03</td><td class="exp"><ul class="topics"><li>Data Experience Final</li><li>Reading discussion</li></ul></td>
+      <td class="exp"><p class="grp">Work</p><ul class="tasks"><li><label><input type="checkbox" data-k="w15-0"><span>Final documentation and make up</span></label></li></ul></td></tr>
+  <tr><td class="exp">16</td><td class="exp">05/10</td><td class="exp"><ul class="topics"><li>Final Presentations</li><li>Guest crits</li></ul></td>
+      <td class="exp"></td></tr>
 </table>
 </div>
-</section>
 
-<section>
 <h2>Readings</h2>
-<ul class="readings">
-  <li>Bridle, James. <em>New Dark Age: Technology and the End of the Future</em>. Updated edition, Verso, 2023.</li>
-  <li>Chen, Chun-houh, et al. <em>Handbook of Data Visualization</em>. Springer, 2008. Springer Handbooks of Computational Statistics.</li>
-  <li>D’Ignazio, Catherine, and Lauren F. Klein. <em>Data Feminism</em>. The MIT Press, 2020. &lt;Strong&gt; Ideas Series.<br><a href="https://data-feminism.mitpress.mit.edu/">https://data-feminism.mitpress.mit.edu/</a></li>
-  <li>Dunne, Anthony, and Fiona Raby. <em>Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination</em>. The MIT Press, 2025. The MIT Press.</li>
-  <li>Noble, Safiya Umoja. <em>Algorithms of Oppression: How Search Engines Reinforce Racism</em>. New York university press, 2018.</li>
-  <li>Offenhuber, Dietmar. <em>Autographic Design: The Matter of Data in a Self-Inscribing World</em>. The MIT Press, 2024. metaLABprojects.</li>
-  <li>Rankin, William. <em>Radical Cartography: How Changing Our Maps Can Change Our World</em>. 1st ed, Penguin Publishing Group, 2025.</li>
-  <li>Thorp, Jer. <em>Living in Data: A Citizen’s Guide to a Better Information</em>. First edition., MCD, 2021.</li>
-  <li>Ṿeytsman, Eyal. <em>Forensic Architecture: Violence at the Threshold of Detectability</em>. First paperback printing, Zone Books, 2019.</li>
-  <li>Giorgia Lupi. Data Humanism: The revolution will be Visualized., Print Magazine, January 30, 2017.</li>
-  <li>Interview with Brian Foo (Data Drive DJ)<br><a href="https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/">https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/</a></li>
-  <li>Onuoha, Mimi. What is Missing is Still There. Nichons-Nous Dans L'Internet, Montreal, Canada, 2018<br><a href="https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf">https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf</a></li>
-  <li>Parish, Allison. New Interfaces for Textual Expression. 2008<br><a href="https://www.decontextualize.com/projects/nite/">https://www.decontextualize.com/projects/nite/</a></li>
-  <li>Parish, Allison. Programming Is Forgetting: Toward A New Hacker Ethic. Open Hardware Summit, 2016.<br><a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/</a></li>
-  <li>Paul Ford. What is Code? Bloomberg Businessweek, June 11, 2015.</li>
-  <li>Dan Michaelson. Change over time. <a href="https://www.linkedbyair.net/">https://www.linkedbyair.net/</a></li>
-  <li>Weiyi Li. Function as Narrative. 2014.</li>
-  <li>Daniel van der Velden. Research &amp; Destroy: A Plea for Design as Research. Metropolis M issue #2, 2006</li>
-  <li>Drew Hemment, Bill Thompson, José Luis de Vicente, Rachel Cooper. Digital Public spaces. Future Everything: 2013</li>
-  <li>Urist, Jacob. The Rise of the Data Artist. The Atlantic, 2015<br><a href="https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/">https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/</a></li>
-</ul>
-</section>
+<div class="view-toggle" role="group" aria-label="Show readings">
+  <button type="button" data-view="list" aria-pressed="false">All readings</button><button type="button" data-view="grouped" aria-pressed="true">By assignment</button>
+</div>
+<div class="refs" id="readings-list" hidden><p>Bridle, James. <em>New Dark Age: Technology and the End of the Future</em>. Updated ed. Verso, 2023.</p><p>Chen, Chun-houh, Wolfgang Härdle, and Antony Unwin, eds. <em>Handbook of Data Visualization</em>. Springer Handbooks of Computational Statistics. Springer, 2008.</p><p>D’Ignazio, Catherine, and Lauren F. Klein. <em>Data Feminism</em>. Strong Ideas. The MIT Press, 2020. <a href="https://data-feminism.mitpress.mit.edu/">https://data-feminism.mitpress.mit.edu/</a></p><p>Dunne, Anthony, and Fiona Raby. <em>Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination</em>. The MIT Press, 2025.</p><p>Foo, Brian. “Brian Foo: The Data-Driven DJ.” Interview, <em>Creative Disturbance</em> podcast. <a href="https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/">https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/</a></p><p>Ford, Paul. “What Is Code?” <em>Bloomberg Businessweek</em>, June 11, 2015. <a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/</a></p><p>Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. <em>Digital Public Spaces</em>. FutureEverything, 2013. <a href="https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf">https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf</a></p><p>Li, Weiyi. “Function as Narrative.” 2014. <a href="https://veryinteractive.net/pdfs/li-functionasnarrative.pdf">https://veryinteractive.net/pdfs/li-functionasnarrative.pdf</a></p><p>Lupi, Giorgia. “Data Humanism: The Revolution Will Be Visualized.” <em>Print Magazine</em>, January 30, 2017. <a href="https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb">https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb</a></p><p>Michaelson, Dan. “Change over Time.” <a href="https://www.linkedbyair.net/">https://www.linkedbyair.net/</a></p><p>Noble, Safiya Umoja. <em>Algorithms of Oppression: How Search Engines Reinforce Racism</em>. New York University Press, 2018.</p><p>Offenhuber, Dietmar. <em>Autographic Design: The Matter of Data in a Self-Inscribing World</em>. metaLABprojects. The MIT Press, 2024.</p><p>Onuoha, Mimi. “What Is Missing Is Still There.” <em>Nichons-Nous Dans L’Internet</em>, Montreal, 2018. <a href="https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf">https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf</a></p><p>Parrish, Allison. <em>New Interfaces for Textual Expression</em>. 2008. <a href="https://www.decontextualize.com/projects/nite/">https://www.decontextualize.com/projects/nite/</a></p><p>Parrish, Allison. “Programming Is Forgetting: Toward a New Hacker Ethic.” Talk, Open Hardware Summit, 2016. <a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/</a></p><p>Rankin, William. <em>Radical Cartography: How Changing Our Maps Can Change Our World</em>. Penguin Publishing Group, 2025.</p><p>Rock, Michael. “F*#k Content.” 2x4, 2009. <a href="https://2x4.org/ideas/2009/fuck-content/">https://2x4.org/ideas/2009/fuck-content/</a></p><p>Thorp, Jer. <em>Living in Data: A Citizen’s Guide to a Better Information Future</em>. MCD, 2021.</p><p>Thorp, Jer. “Data &amp; Humans: A Love Story.” Video, Library of Congress, December 21, 2016. <a href="https://www.youtube.com/watch?v=dfGJDF6fJtM">https://www.youtube.com/watch?v=dfGJDF6fJtM</a></p><p>Urist, Jacoba. “The Rise of the Data Artist.” <em>The Atlantic</em>, May 2015. <a href="https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/">https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/</a></p><p>van der Velden, Daniel. “Research &amp; Destroy: A Plea for Design as Research.” <em>Metropolis M</em>, no. 2, 2006. <a href="https://metropolism.com/en/feature/research-destroy/">https://metropolism.com/en/feature/research-destroy/</a></p><p>Warde, Beatrice. “The Crystal Goblet, or Printing Should Be Invisible.” 1932. <a href="https://readings.design/PDF/The%20Crystal%20Goblet.pdf">https://readings.design/PDF/The%20Crystal%20Goblet.pdf</a></p><p>Weizman, Eyal. <em>Forensic Architecture: Violence at the Threshold of Detectability</em>. Zone Books, 2019.</p></div>
+<div class="refs appendix" id="readings-grouped"><div class="ap remix"><h3><span class="num">01</span>Remix</h3><p>Ford, Paul. “What Is Code?” <em>Bloomberg Businessweek</em>, June 11, 2015. <a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/</a></p><p>Parrish, Allison. <em>New Interfaces for Textual Expression</em>. 2008. <a href="https://www.decontextualize.com/projects/nite/">https://www.decontextualize.com/projects/nite/</a></p><p>Parrish, Allison. “Programming Is Forgetting: Toward a New Hacker Ethic.” Talk, Open Hardware Summit, 2016. <a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/</a></p><p>Rock, Michael. “F*#k Content.” 2x4, 2009. <a href="https://2x4.org/ideas/2009/fuck-content/">https://2x4.org/ideas/2009/fuck-content/</a></p><p>Warde, Beatrice. “The Crystal Goblet, or Printing Should Be Invisible.” 1932. <a href="https://readings.design/PDF/The%20Crystal%20Goblet.pdf">https://readings.design/PDF/The%20Crystal%20Goblet.pdf</a></p></div><div class="ap track"><h3><span class="num">02</span>Track</h3><p>Chen, Chun-houh, Wolfgang Härdle, and Antony Unwin, eds. <em>Handbook of Data Visualization</em>. Springer Handbooks of Computational Statistics. Springer, 2008.</p><p>Li, Weiyi. “Function as Narrative.” 2014. <a href="https://veryinteractive.net/pdfs/li-functionasnarrative.pdf">https://veryinteractive.net/pdfs/li-functionasnarrative.pdf</a></p><p>Lupi, Giorgia. “Data Humanism: The Revolution Will Be Visualized.” <em>Print Magazine</em>, January 30, 2017. <a href="https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb">https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb</a></p><p>Michaelson, Dan. “Change over Time.” <a href="https://www.linkedbyair.net/">https://www.linkedbyair.net/</a></p><p>Thorp, Jer. “Data &amp; Humans: A Love Story.” Video, Library of Congress, December 21, 2016. <a href="https://www.youtube.com/watch?v=dfGJDF6fJtM">https://www.youtube.com/watch?v=dfGJDF6fJtM</a></p><p>Thorp, Jer. <em>Living in Data: A Citizen’s Guide to a Better Information Future</em>. MCD, 2021.</p></div><div class="ap phys"><h3><span class="num">03</span>Physical Data</h3><p>Foo, Brian. “Brian Foo: The Data-Driven DJ.” Interview, <em>Creative Disturbance</em> podcast. <a href="https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/">https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/</a></p><p>Offenhuber, Dietmar. <em>Autographic Design: The Matter of Data in a Self-Inscribing World</em>. metaLABprojects. The MIT Press, 2024.</p><p>Rankin, William. <em>Radical Cartography: How Changing Our Maps Can Change Our World</em>. Penguin Publishing Group, 2025.</p><p>Weizman, Eyal. <em>Forensic Architecture: Violence at the Threshold of Detectability</em>. Zone Books, 2019.</p></div><div class="ap arch"><h3><span class="num">04</span>Living Archive</h3><p>Onuoha, Mimi. “What Is Missing Is Still There.” <em>Nichons-Nous Dans L’Internet</em>, Montreal, 2018. <a href="https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf">https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf</a></p></div><div class="ap exp"><h3><span class="num">05</span>Data Experience</h3><p>Bridle, James. <em>New Dark Age: Technology and the End of the Future</em>. Updated ed. Verso, 2023.</p><p>Dunne, Anthony, and Fiona Raby. <em>Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination</em>. The MIT Press, 2025.</p><p>Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. <em>Digital Public Spaces</em>. FutureEverything, 2013. <a href="https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf">https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf</a></p><p>Noble, Safiya Umoja. <em>Algorithms of Oppression: How Search Engines Reinforce Racism</em>. New York University Press, 2018.</p><p>Urist, Jacoba. “The Rise of the Data Artist.” <em>The Atlantic</em>, May 2015. <a href="https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/">https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/</a></p></div><div class="ap all"><h3>Throughout the course</h3><p>D’Ignazio, Catherine, and Lauren F. Klein. <em>Data Feminism</em>. Strong Ideas. The MIT Press, 2020. <a href="https://data-feminism.mitpress.mit.edu/">https://data-feminism.mitpress.mit.edu/</a></p><p>van der Velden, Daniel. “Research &amp; Destroy: A Plea for Design as Research.” <em>Metropolis M</em>, no. 2, 2006. <a href="https://metropolism.com/en/feature/research-destroy/">https://metropolism.com/en/feature/research-destroy/</a></p></div></div>
 
-<section>
 <h2>Materials and Supplies</h2>
 <p>Use of personal laptops during class is required. Cloud computing resources used during class instruction will be provided at no cost. Other than that: Camera or photographic device and use of Adobe Creative Suite</p>
-</section>
 
-<section>
 <h2>Resources</h2>
 <p>The university provides many resources to help students achieve academic and artistic excellence. These resources include:</p>
 <ul>
@@ -273,73 +378,89 @@
 </ul>
 <p>In keeping with the university’s policy of providing equal access for students with disabilities, any student with a disability who needs academic accommodations is welcome to meet with me privately. All conversations will be kept confidential. Students requesting any accommodations will also need to contact Student Disability Service (SDS). SDS will conduct an intake and, if appropriate, the Director will provide an academic accommodation notification letter for you to bring to me. At that point, I will review the letter with you and discuss these accommodations in relation to this course.</p>
 
-<h3>Making Center</h3>
-<p>The Making Center is a constellation of shops, labs, and open workspaces that are situated across the New School to help students express their ideas in a variety of materials and methods. We have resources to help support woodworking, metalworking, ceramics and pottery work, photography and film, textiles, printmaking, 3D printing, manual and CNC machining, and more. A staff of technicians and student workers provide expertise and maintain the different shops and labs. Safety is a primary concern, so each area has policies for access, training, and etiquette that students and faculty should be familiar with. Many areas require specific orientations or trainings before access is granted. Detailed information about the resources available, as well as schedules, trainings, and policies can be found at resources.parsons.edu.</p>
-</section>
+<h2>Making Center</h2>
+<p>The Making Center is a constellation of shops, labs, and open workspaces that are situated across the New School to help students express their ideas in a variety of materials and methods. We have resources to help support woodworking, metalworking, ceramics and pottery work, photography and film, textiles, printmaking, 3D printing, manual and CNC machining, and more. A staff of technicians and student workers provide expertise and maintain the different shops and labs. Safety is a primary concern, so each area has policies for access, training, and etiquette that students and faculty should be familiar with. Many areas require specific orientations or trainings before access is granted. Detailed information about the resources available, as well as schedules, trainings, and policies can be found at <a href="https://resources.parsons.edu">resources.parsons.edu</a>.</p>
 
-<section>
 <h2>Grading Standards</h2>
-<div class="table-wrap">
-<table>
-  <tbody>
-    <tr><th scope="row">A</th><td>Work of exceptional quality</td></tr>
-    <tr><th scope="row">A-</th><td>Work of high quality</td></tr>
-    <tr><th scope="row">B+</th><td>Very good work</td></tr>
-    <tr><th scope="row">B</th><td>Good work; satisfies course requirements<br>Satisfactory completion of a course is considered to be a grade of B or higher.</td></tr>
-    <tr><th scope="row">B-</th><td>Below-average work</td></tr>
-    <tr><th scope="row">C+</th><td>Less than adequate work</td></tr>
-    <tr><th scope="row">C</th><td>Well below average work</td></tr>
-    <tr><th scope="row">C-</th><td>Poor work; lowest possible passing grade</td></tr>
-    <tr><th scope="row">F</th><td>Failure</td></tr>
-    <tr><th scope="row">GM</th><td>Grade missing for an individual</td></tr>
-  </tbody>
-</table>
-</div>
-<p>Grades of D are not used in graduate level courses.</p>
+<dl class="gs">
+  <dt>A</dt><dd>Work of exceptional quality</dd>
+  <dt>A-</dt><dd>Work of high quality</dd>
+  <dt>B+</dt><dd>Very good work</dd>
+  <dt>B</dt><dd>Good work; satisfies course requirements</dd>
+</dl>
+<p class="aside">Satisfactory completion of a course is considered to be a grade of B or higher.</p>
+<dl class="gs">
+  <dt>B-</dt><dd>Below-average work</dd>
+  <dt>C+</dt><dd>Less than adequate work</dd>
+  <dt>C</dt><dd>Well below average work</dd>
+  <dt>C-</dt><dd>Poor work; lowest possible passing grade</dd>
+  <dt>F</dt><dd>Failure</dd>
+  <dt>GM</dt><dd>Grade missing for an individual</dd>
+</dl>
+<p class="aside">Grades of D are not used in graduate level courses.</p>
 
 <h3>Grade of W</h3>
 <p>The grade of W may be issued by the Office of the Registrar to a student who officially withdraws from a course within the applicable deadline. There is no academic penalty, but the grade will appear on the student transcript. A grade of W may also be issued by an instructor to a graduate student (except at Parsons and Mannes) who has not completed course requirements nor arranged for an Incomplete.</p>
-
 <h3>Grade of Z</h3>
 <p>The grade of Z is issued by an instructor to a student who has not attended or not completed all required work in a course but did not officially withdraw before the withdrawal deadline. It differs from an “F,” which would indicate that the student technically completed requirements but that the level of work did not qualify for a passing grade.</p>
-
 <h3>Grades of Incomplete</h3>
-<p>The grade of I, or temporary incomplete, may be granted to a student under unusual and extenuating circumstances, such as when the student’s academic life is interrupted by a medical or personal emergency. This mark is not given automatically but only upon the student’s request and at the discretion of the instructor. A Request for Incomplete form must be completed and signed by student and instructor. The time allowed for completion of the work and removal of the “I” mark will be set by the instructor with the following limitations: [You should include one the following standards, depending on the level of your course].</p>
+<p>The grade of I, or temporary incomplete, may be granted to a student under unusual and extenuating circumstances, such as when the student’s academic life is interrupted by a medical or personal emergency. This mark is not given automatically but only upon the student’s request and at the discretion of the instructor. A Request for Incomplete form must be completed and signed by student and instructor. The time allowed for completion of the work and removal of the “I” mark will be set by the instructor with the following limitations:</p>
 <p>Work must be completed no later than one year following the end of the class. Grades of “I” not revised in the prescribed time will be recorded as a final grade of “WF” (for Parsons and Mannes graduate students) or “N” (for all other graduate students) by the Office of the Registrar. The grade of “N” does not affect the GPA but does indicate a permanent incomplete.</p>
-</section>
 
-<section>
 <h2>Divisional, Program and Class Policies</h2>
-
 <h3>Responsibility</h3>
 <p>Students are responsible for all assignments, even if they are absent. Late assignments, failure to complete the assignments for class discussion and/or critique, and lack of preparedness for in-class discussions, presentations and/or critiques will jeopardize your successful completion of this course.</p>
-
 <h3>Participation</h3>
 <p>Class participation is an essential part of class and includes: keeping up with reading, assignments, projects, contributing meaningfully to class discussions, active participation in group work, and coming to class regularly and on time.</p>
-
 <h3>Attendance</h3>
 <p>Parsons’ attendance guidelines were developed to encourage students’ success in all aspects of their academic programs. Full participation is essential to the successful completion of coursework and enhances the quality of the educational experience for all, particularly in courses where group work is integral; thus, Parsons promotes high levels of attendance. Students are expected to attend classes regularly and promptly and in compliance with the standards stated in this course syllabus.</p>
 <p>While attendance is just one aspect of active participation, absence from a significant portion of class time may prevent the successful attainment of course objectives. A significant portion of class time is generally defined as the equivalent of three weeks, or 20%, of class time. Lateness or early departure from class may be recorded as one full absence. Students may be asked to withdraw from a course if habitual absenteeism or tardiness has a negative impact on the class environment.</p>
 <p>Whether the course is a lecture, seminar or studio, faculty will assess each student’s performance against all of the assessment criteria in determining the student’s final grade.</p>
-
 <h3>Canvas</h3>
 <p>Use of Canvas may be an important resource for this class. Students should check it for announcements before coming to class each week.</p>
-
 <h3>Delays</h3>
 <p>In rare instances, I may be delayed arriving to class. If I have not arrived by the time class is scheduled to start, you must wait a minimum of thirty minutes for my arrival. In the event that I will miss class entirely, a sign will be posted at the classroom indicating your assignment for the next class meeting.</p>
-
 <h3>Electronic Devices</h3>
-<p>The use of electronic devices (phones, tablets, laptops, cameras, etc.) is permitted when the device is being used in relation to the course's work. All other uses are prohibited in the classroom and devices should be turned off before class starts.</p>
-
+<p>The use of electronic devices (phones, tablets, laptops, cameras, etc.) is permitted when the device is being used in relation to the course’s work. All other uses are prohibited in the classroom and devices should be turned off before class starts.</p>
 <h3>Academic Honesty and Integrity</h3>
 <p>Compromising your academic integrity may lead to serious consequences, including (but not limited to) one or more of the following: failure of the assignment, failure of the course, academic warning, disciplinary probation, suspension from the university, or dismissal from the university.</p>
 <p>Students are responsible for understanding the University’s policy on academic honesty and integrity and must make use of proper citations of sources for writing papers, creating, presenting, and performing their work, taking examinations, and doing research. It is the responsibility of students to learn the procedures specific to their discipline for correctly and appropriately differentiating their own work from that of others. The full text of the policy, including adjudication procedures, is found at <a href="http://www.newschool.edu/policies/#">http://www.newschool.edu/policies/#</a> Resources regarding what plagiarism is and how to avoid it can be found on the Learning Center’s website: <a href="http://www.newschool.edu/university-learning-center/student-resources/">http://www.newschool.edu/university-learning-center/student-resources/</a></p>
 <p>The New School views “academic honesty and integrity” as the duty of every member of an academic community to claim authorship for his or her own work and only for that work, and to recognize the contributions of others accurately and completely. This obligation is fundamental to the integrity of intellectual debate, and creative and academic pursuits. Academic honesty and integrity includes accurate use of quotations, as well as appropriate and explicit citation of sources in instances of paraphrasing and describing ideas, or reporting on research findings or any aspect of the work of others (including that of faculty members and other students). Academic dishonesty results from infractions of this “accurate use”. The standards of academic honesty and integrity, and citation of sources, apply to all forms of academic work, including submissions of drafts of final papers or projects. All members of the University community are expected to conduct themselves in accord with the standards of academic honesty and integrity. Please see the complete policy in the Parsons Catalog.</p>
-
 <h3>Intellectual Property Rights</h3>
 <p><a href="http://www.newschool.edu/policies/#">http://www.newschool.edu/policies/#</a></p>
-</section>
 
+<section class="appendix" id="appendix">
+<h2>Appendix: Extra Readings</h2>
+<p class="aside" style="font-style:normal">Additional readings beyond the syllabus, organized by project. Optional unless assigned in the Course Outline.</p>
+<div class="ap remix"><h3><span class="num">01</span>Remix</h3><ul class="res"><li><span class="kind">Essay</span><div><p class="cite">Parrish, Allison. <em>Language Models Can Only Write Poetry</em>. 2021. <a href="https://posts.decontextualize.com/language-models-poetry/">Link</a></p><p class="note">Pairs with Parrish, “Programming Is Forgetting.”</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Parrish, Allison. Post on large language models and the visibility of the cut. 2024. <a href="https://posts.decontextualize.com/">Link</a></p><p class="note">Connects collage and remix to generative text; bridges Projects 01 and 04.</p></div></li></ul></div>
+<div class="ap track"><h3><span class="num">02</span>Track</h3><ul class="res"><li><span class="kind">Book</span><div><p class="cite">Lupi, Giorgia, and Phillip Cox. <em>Speak Data</em>. Chronicle Books, 2025.</p><p class="note">Pairs with Lupi, “Data Humanism.”</p></div></li><li><span class="kind">Visual essay</span><div><p class="cite">Lupi, Giorgia. <em>1,374 Days: My Life with Long COVID</em>. The New York Times, 2024. <a href="https://en.wikipedia.org/wiki/Giorgia_Lupi">Link</a></p><p class="note">A visual op-ed built from self-tracked data; winner of the 2025 Compasso d’Oro. A direct follow-up to <em>Data Humanism</em>. See also her 2024 TED talk, “What Long Covid Has Taught Me About Life (and Data).”</p></div></li><li><span class="kind">Book</span><div><p class="cite">Bremer, Nadieh, and Shirley Wu. <em>Data Sketches</em>. CRC Press, 2021.</p><p class="note">Pairs with Chen et al., <em>Handbook of Data Visualization</em>.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Cairo, Alberto. <em>The Art of Insight</em>. Wiley, 2023.</p><p class="note">Pairs with Chen et al.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Wilke, Claus O. <em>Fundamentals of Data Visualization</em>. 2019. <a href="https://clauswilke.com/dataviz/">Link</a></p><p class="note">Reference for the digital poster stage.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Chayka, Kyle. <em>Filterworld: How Algorithms Flattened Culture</em>. Doubleday, 2024. <a href="https://www.kylechayka.com/filterworld">Link</a></p><p class="note">How recommendation feeds shape taste. A useful counterpoint to tracking your own data.</p></div></li><li><span class="kind">Podcast</span><div><p class="cite"><em>Explore Explain</em>. Hosted by Andy Kirk. <a href="https://coolinfographics.com/dataviz-shows">Link</a></p><p class="note">Long-form conversations on the design story behind specific visualizations.</p></div></li><li><span class="kind">Podcast</span><div><p class="cite"><em>Data Viz Today</em>. Hosted by Alli Torban. <a href="https://dataviztoday.com/">Link</a></p><p class="note">Practical design tactics and interviews with visualization designers.</p></div></li><li><span class="kind">Exhibition</span><div><p class="cite"><em>Giorgia Lupi: Data Humanism</em>. Gallerie d’Italia, Vicenza, 2026. <a href="https://gallerieditalia.com/en/vicenza/exhibitions-and-initiatives/exhibitions/2026/04/30/giorgia-lupi-data-humanism-in-vicenza/">Link</a></p><p class="note">Lupi’s first solo exhibition: sketches, data paintings, textiles, and identities.</p></div></li></ul></div>
+<div class="ap phys"><h3><span class="num">03</span>Physical Data</h3><ul class="res"><li><span class="kind">Book</span><div><p class="cite">Posavec, Stefanie, and Miriam Quick. <em>I Am a Book. I Am a Portal to the Universe.</em> Particular Books, 2020.</p><p class="note">A book that is itself a data object.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Huron, Samuel, Till Nagel, Lora Oehlberg, and Wesley Willett, eds. <em>Making with Data: Physical Design and Craft in a Data-Driven World</em>. AK Peters/CRC Press, 2023. <a href="https://makingwithdata.org/press">Link</a></p><p class="note">Process accounts from 25+ artists, designers, and scientists who give data physical form.</p></div></li><li><span class="kind">Archive</span><div><p class="cite">Dragicevic, Pierre, and Yvonne Jansen. <em>List of Physical Visualizations</em>. <a href="http://dataphys.org/list/">Link</a></p><p class="note">Archive of precedents.</p></div></li><li><span class="kind">Artwork</span><div><p class="cite">Crawford, Kate, and Vladan Joler. <em>Calculating Empires</em>. 2023. <a href="https://calculatingempires.net/">Link</a></p><p class="note">Also bridges to Project 04.</p></div></li><li><span class="kind">Book</span><div><p class="cite"><em>Physicalizing Data: Design Approaches for Human-Data Interaction</em>. Springer, 2025. <a href="https://link.springer.com/book/10.1007/978-3-032-05322-0">Link</a></p><p class="note">More academic; includes a variables scheme and an ideation process for designing physicalizations.</p></div></li><li><span class="kind">Projects</span><div><p class="cite">Fragapane, Federica. <em>Gaza</em> and <em>Rafah</em>. 2024. <a href="https://www.designboom.com/design/data-federica-fragapane-soft-forms-hard-facts-inequalities-shapes-triennale-milano-interview-06-08-2025/">Link</a></p><p class="note">Soft, crafted forms for hard facts. Useful for discussing material, tone, and care.</p></div></li></ul></div>
+<div class="ap arch"><h3><span class="num">04</span>Living Archive</h3><ul class="res"><li><span class="kind">Film</span><div><p class="cite">Ọnụọha, Mimi. <em>Ground Truths</em>. 2025.</p><p class="note">Pairs with Onuoha, “What Is Missing Is Still There.”</p></div></li><li><span class="kind">Project</span><div><p class="cite">The, Richard (TheGreenEyl). <em>Liquid Archive</em>. MIT Museum. <a href="https://richardthe.com/projects/LiquidArchive">Link</a></p><p class="note">Machine learning finds connections across a museum collection.</p></div></li><li><span class="kind">API</span><div><p class="cite">The Metropolitan Museum of Art. <em>Collection API</em>. <a href="https://metmuseum.github.io/">Link</a></p><p class="note">Free Open Access data and images for 470,000+ artworks; no API key.</p></div></li></ul></div>
+<div class="ap exp"><h3><span class="num">05</span>Data Experience</h3><ul class="res"><li><span class="kind">Book</span><div><p class="cite">Dunne, Anthony, and Fiona Raby. <em>Speculative Everything: Design, Fiction, and Social Dreaming</em>. The MIT Press, 2013.</p><p class="note">Assigned in the Spring 2025 syllabus; dropped in 2026.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Foster, Nick. <em>The Future Mundane</em>. Core77, October 7, 2013.</p><p class="note">Assigned in the Spring 2025 syllabus; dropped in 2026.</p></div></li><li><span class="kind">Artwork</span><div><p class="cite">Anadol, Refik. <em>Machine Dreams: Rainforest</em>. Dataland, Los Angeles, 2026.</p><p class="note">Pairs with Urist, “The Rise of the Data Artist.”</p></div></li><li><span class="kind">Artwork</span><div><p class="cite">Herndon, Holly, and Mat Dryhurst. <em>The Call</em>. Serpentine, 2024.</p><p class="note">A contrasting model built on consent.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Chiang, Ted. <em>ChatGPT Is a Blurry JPEG of the Web</em>. The New Yorker, 2023.</p><p class="note">Pairs with Ford, “What Is Code?”</p></div></li><li><span class="kind">Book</span><div><p class="cite">Wolfram, Stephen. <em>What Is ChatGPT Doing … and Why Does It Work?</em> 2023.</p><p class="note">Pairs with Ford.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Buolamwini, Joy. <em>Unmasking AI: My Mission to Protect What Is Human in a World of Machines</em>. Random House, 2023. <a href="https://www.unmasking.ai/">Link</a></p><p class="note">Bias in computer vision (“the coded gaze”). Relevant to any project using face or image recognition.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Bender, Emily M., and Alex Hanna. <em>The AI Con: How to Fight Big Tech’s Hype and Create the Future We Want</em>. Harper, 2025. <a href="https://thecon.ai/">Link</a></p><p class="note">A clear, structured argument against AI hype.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Hao, Karen. <em>Empire of AI: Dreams and Nightmares in Sam Altman’s OpenAI</em>. Penguin Press, 2025. <a href="https://www.penguinrandomhouse.com/books/743569/empire-of-ai-by-karen-hao/">Link</a></p><p class="note">Reporting on the labor, resources, and power behind AI; National Book Critics Circle Award. The author has corrected one data-center water-use figure.</p></div></li><li><span class="kind">Artwork</span><div><p class="cite">Herndon, Holly, and Mat Dryhurst. <em>xhairymutantx</em>. Whitney Biennial, 2024. <a href="https://whitney.org/exhibitions/xhairymutantx">Link</a></p><p class="note">A text-to-image model trained to distort images of Herndon. About who controls training data.</p></div></li><li><span class="kind">Artwork + critique</span><div><p class="cite">Anadol, Refik. <em>Unsupervised</em>. MoMA, 2022–23; with Eryk Salvaggio, <em>Ideologies of Awe &amp; AI Art at the MoMA</em>. <a href="https://cyberneticforests.substack.com/p/ideologies-of-awe-and-ai-art-at-the">Link</a></p><p class="note">A case study for debating spectacle in “AI data art.” See also the <a href="https://www.e-flux.com/criticism/527236/refik-anadol-s-unsupervised">e-flux review</a>.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Wattenberger, Amelia. <em>Why Chatbots Are Not the Future</em>. 2023. <a href="https://wattenberger.com/thoughts/boo-chatbots/">Link</a></p><p class="note">A designer’s case for AI interfaces beyond the chat box.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Appleton, Maggie. <em>Language Model Sketchbook, or Why I Hate Chatbots</em>. 2023. <a href="https://maggieappleton.com/lm-sketchbook">Link</a></p><p class="note">Sketches of small, scoped AI interactions. Read with Wattenberger.</p></div></li><li><span class="kind">Journal</span><div><p class="cite"><em>Nightingale</em>, Journal of the Data Visualization Society. “The 4th Wave: A Changing World.” 2024. <a href="https://nightingaledvs.com/fourth-wave-a-changing-world/">Link</a></p><p class="note">Includes survey data on how visualization designers are using AI tools.</p></div></li><li><span class="kind">Podcast</span><div><p class="cite"><em>Mystery AI Hype Theater 3000</em>. Hosted by Emily M. Bender and Alex Hanna. <a href="https://podcasts.apple.com/ma/podcast/mystery-ai-hype-theater-3000/id1690426042">Link</a></p><p class="note">Monthly breakdowns of AI hype. Companion to <em>The AI Con</em>.</p></div></li><li><span class="kind">Podcast</span><div><p class="cite"><em>Interdependence</em>. Hosted by Holly Herndon and Mat Dryhurst. <a href="https://interdependence.fm/">Link</a></p><p class="note">Conversations on music, technology, AI, and culture.</p></div></li></ul></div>
+<div class="ap all"><h3>Throughout the course</h3><ul class="res"><li><span class="kind">Talk</span><div><p class="cite">Evans, Benedict. <em>Mobile Is Eating the World</em>. Presentation, WSJD conference, October 28, 2014.</p><p class="note">Assigned in the Spring 2025 syllabus; dropped in 2026.</p></div></li><li><span class="kind">Book</span><div><p class="cite">D’Ignazio, Catherine. <em>Counting Feminicide</em>. The MIT Press, 2024.</p><p class="note">Pairs with <em>Data Feminism</em>.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Mattern, Shannon. <em>A City Is Not a Computer</em>. Princeton University Press, 2021.</p><p class="note">Pairs with Hemment et al., <em>Digital Public Spaces</em>.</p></div></li><li><span class="kind">Book</span><div><p class="cite">Fuller, Matthew, and Eyal Weizman. <em>Investigative Aesthetics</em>. Verso, 2021.</p><p class="note">Pairs with Weizman and van der Velden.</p></div></li></ul></div>
+<div class="ap all"><h3>Essays, articles, and talks on AI and data</h3><h4>How models work, shown visually</h4><ul class="res"><li><span class="kind">Interactive</span><div><p class="cite">Bycroft, Brendan. <em>LLM Visualization</em>. 2023. <a href="https://bbycroft.net/llm">Link</a></p></div></li><li><span class="kind">Essay</span><div><p class="cite">Carter, Shan, Zan Armstrong, Ludwig Schubert, Ian Johnson, and Chris Olah. <em>Activation Atlas</em>. Distill, 2019. <a href="https://distill.pub/2019/activation-atlas/">Link</a></p></div></li><li><span class="kind">Interactive</span><div><p class="cite">Google PAIR. <em>AI Explorables</em>. <a href="https://pair.withgoogle.com/explorables/">Link</a></p></div></li><li><span class="kind">Research</span><div><p class="cite">Anthropic. <em>Tracing the Thoughts of a Large Language Model</em>. 2025. <a href="https://www.anthropic.com/research/tracing-thoughts-language-model">Link</a></p></div></li><li><span class="kind">Talk</span><div><p class="cite">Karpathy, Andrej. <em>Intro to Large Language Models</em>. 2023.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Sutton, Richard. <em>The Bitter Lesson</em>. 2019. <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">Link</a></p></div></li></ul><h4>Images, datasets, and what gets left out</h4><ul class="res"><li><span class="kind">Essay</span><div><p class="cite">Crawford, Kate, and Trevor Paglen. <em>Excavating AI: The Politics of Images in Machine Learning Training Sets</em>. 2019. <a href="https://excavating.ai/">Link</a></p></div></li><li><span class="kind">Essay</span><div><p class="cite">Steyerl, Hito. <em>Mean Images</em>. New Left Review, no. 140/141, 2023.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Salvaggio, Eryk. <em>How to Read an AI Image</em>. Cybernetic Forests, 2022.</p></div></li><li><span class="kind">Paper</span><div><p class="cite">Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. <em>On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?</em> FAccT, 2021.</p></div></li></ul><h4>Art, authorship, and labor</h4><ul class="res"><li><span class="kind">Essay</span><div><p class="cite">Chiang, Ted. <em>Why A.I. Isn’t Going to Make Art</em>. The New Yorker, 2024.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Lanier, Jaron. <em>There Is No A.I.</em> The New Yorker, 2023.</p></div></li><li><span class="kind">Talk</span><div><p class="cite">Herndon, Holly. <em>What If You Could Sing in Your Favorite Musician’s Voice?</em> TED, 2022.</p></div></li><li><span class="kind">Essay</span><div><p class="cite">Whittaker, Meredith. <em>The Steep Cost of Capture</em>. ACM Interactions, 2021.</p></div></li></ul><h4>Important current AI writing</h4><ul class="res"><li><span class="kind">Essay</span><div><p class="cite">Amodei, Dario. <em>Machines of Loving Grace</em>. 2024. <a href="https://darioamodei.com/machines-of-loving-grace">Link</a></p></div></li><li><span class="kind">Scenario</span><div><p class="cite">Kokotajlo, Daniel, et al. <em>AI 2027</em>. 2025. <a href="https://ai-2027.com/">Link</a></p></div></li><li><span class="kind">Essay</span><div><p class="cite">Narayanan, Arvind, and Sayash Kapoor. <em>AI as Normal Technology</em>. Knight First Amendment Institute, 2025.</p></div></li><li><span class="kind">Paper</span><div><p class="cite">Gebru, Timnit, and Émile P. Torres. <em>The TESCREAL Bundle</em>. First Monday, 2024.</p></div></li></ul></div>
+</section>
+<footer>Data as Material · PSAM 5170 · Section A · Spring 2027 · Parsons School of Design</footer>
 </main>
+<script>
+  // Readings: switch between the alphabetical list and the by-assignment view.
+  document.querySelectorAll('.view-toggle button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var grouped = btn.dataset.view === 'grouped';
+      document.getElementById('readings-list').hidden = grouped;
+      document.getElementById('readings-grouped').hidden = !grouped;
+      document.querySelectorAll('.view-toggle button').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+    });
+  });
+
+  // Remember checked assignments in this browser only.
+  document.querySelectorAll('.outline input[data-k]').forEach(function (box) {
+    var key = 'dam-' + box.dataset.k;
+    try { box.checked = localStorage.getItem(key) === '1'; } catch (e) {}
+    box.addEventListener('change', function () {
+      try { box.checked ? localStorage.setItem(key, '1') : localStorage.removeItem(key); } catch (e) {}
+    });
+  });
+</script>
 </body>
 </html>

@@ -17,9 +17,9 @@ Professor: Regina Flores Mir
 
 ### Project 02: Track
 - Lupi, Giorgia. "Data Humanism: The Revolution Will Be Visualized." *Print Magazine*, January 30, 2017. (Week 02) https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb
-- Watch: "Data and Humans." (Week 02) https://www.youtube.com/watch?v=dfGJDF6fJtM
+- Thorp, Jer. "Data & Humans: A Love Story." Video, Library of Congress, 2016. (Week 02) https://www.youtube.com/watch?v=dfGJDF6fJtM
 - Michaelson, Dan. "Change over Time." https://www.linkedbyair.net/
-- Li, Weiyi. "Function as Narrative." 2014.
+- Li, Weiyi. "Function as Narrative." 2014. https://veryinteractive.net/pdfs/li-functionasnarrative.pdf
 - Thorp, Jer. *Living in Data: A Citizen's Guide to a Better Information Future*. MCD, 2021.
 - Chen, Chun-houh, et al. *Handbook of Data Visualization*. Springer, 2008.
 
