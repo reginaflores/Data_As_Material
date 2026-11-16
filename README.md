@@ -26,7 +26,7 @@ Professor: Regina Flores Mir · regina.flores@newschool.edu · Office hours by a
 | --- | --- | --- | --- |
 | 01 | **Remix.** Typeset an existing text 20 ways (5 rules × 4 variations), one webpage each. Form changes; content stays intact. | 1–3 | 15% |
 | 02 | **Track or Feed.** Path A: track data you produce yourself and visualize it, first on paper, then digitally. Path B: build a system that uses a live data feed in a way its source didn't expect. | 2–5 | 15% |
-| 03 | **Physical Data.** Translate a dataset into a data sculpture or physical form. Choose materials and processes intentionally. | 5–9 | 15% |
+| 03 | **Physical Data.** Translate a dataset into a data sculpture or physical form. Choose materials and processes intentionally. Complete the Making Center general orientation on Canvas by 02/22. | 5–9 | 15% |
 | 04 | **Living Archive.** Use machine learning to create a new dataset from an archive, then visualize what it reveals. | 9–12 | 15% |
 | 05 | **Data Experience.** Use AI systems to create a data-driven experience, service, product, or installation that wouldn't be possible otherwise. | 12–16 | 20% |
 
@@ -40,7 +40,7 @@ Attendance & participation 10% · Lab/lecture 10%
 | --- | --- | --- | --- | --- |
 | 01 | 01/25 | Introduction, syllabus, warm up, readings · Lab: HTML, CSS, and GitHub Pages setup | Remix | Warde; Rock; Parrish, *NITE*; Ford; Parrish, "Programming Is Forgetting" |
 | 02 | 02/01 | Review Remix · Reading discussion · Lecture: Quantified Self and data tracking · Lab: Ways to track your own data | Remix updates & documentation · Track/Feed analog · Begin data collection | Lupi, "Data Humanism"; Thorp, "Data & Humans" (watch); D'Ignazio & Klein, *Data Feminism* ch. 4; Thorp, *Living in Data* |
-| 03 | 02/08 | Review Remix documentation · Review Track/Feed data set and postcards · Graphic Design Iteration workshop · Lab: Drawing data in the browser with p5.js, and pulling live data feeds (fetch, JSON) · Tool note (optional): Figma for poster layout · Reading discussion | Track/Feed digital | Michaelson, "Change over Time"; Li, "Function as Narrative" |
+| 03 | 02/08 | Review Remix documentation · Review Track/Feed data set and postcards · Graphic Design Iteration workshop · Lab: Drawing data in the browser with p5.js, and pulling live data feeds (fetch, JSON) · Tool note (optional): Figma for poster layout · Reading discussion | Track/Feed digital · Making Center general orientation on Canvas, plus any lab modules you need (due 02/22) | Michaelson, "Change over Time"; Li, "Function as Narrative" |
 | 04 | 02/15 | Presidents' Day · University closed | | |
 | 05 | 02/22 | Review Track/Feed posters · Reading discussion · Lecture: Data sculptures · Lab: Making Center visit and digital fabrication overview | Revised poster design · Track/Feed final documentation · Physical data concept & sketches | Chen et al., *Handbook of Data Visualization*; Offenhuber, *Autographic Design* (intro); Rankin, *Radical Cartography* (intro) |
 | 06 | 03/01 | Physical data concept & sketches · Reading discussion · Lab: p5.js, using map() and if statements to translate data, and exporting SVG files for laser cutting · Tool note (optional): Blender + Python for 3D printing | Physical data prototype | |
