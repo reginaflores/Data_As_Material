@@ -38,20 +38,20 @@ Attendance & participation 10% · Lab/lecture 10%
 
 | Week | Date | In class | Work | Read |
 | --- | --- | --- | --- | --- |
-| 01 | 01/25 | Introduction, syllabus, warm up, readings · Lab: HTML, CSS, and GitHub Pages setup | Remix | Warde; Rock; Parrish, *NITE*; Ford; Parrish, "Programming Is Forgetting" |
-| 02 | 02/01 | Review Remix · Reading discussion · Lecture: Quantified Self and data tracking · Lab: Ways to track your own data | Remix updates & documentation · Track/Feed analog · Begin data collection | Lupi, "Data Humanism"; Thorp, "Data & Humans" (watch); D'Ignazio & Klein, *Data Feminism* ch. 4; Thorp, *Living in Data* |
-| 03 | 02/08 | Review Remix documentation · Review Track/Feed data set and postcards · Graphic Design Iteration workshop · Lab: Drawing data in the browser with p5.js, and pulling live data feeds (fetch, JSON) · Tool note (optional): Figma for poster layout · Reading discussion | Track/Feed digital · Making Center general orientation on Canvas, plus any lab modules you need (due 02/22) | Michaelson, "Change over Time"; Li, "Function as Narrative" |
+| 01 | 01/25 | Introduction, syllabus, warm up, readings · Sign up for Reading Presentation and Discussion · Lab: HTML, CSS, and GitHub Pages setup | Remix | Warde; Rock; Parrish, *NITE*; Ford; Parrish, "Programming Is Forgetting" |
+| 02 | 02/01 | Review Remix · Reading Presentation and Discussion · Lecture: Quantified Self and data tracking · Lab: Ways to track your own data | Remix updates & documentation · Track/Feed analog · Begin data collection | Lupi, "Data Humanism"; Thorp, "Data & Humans" (watch); D'Ignazio & Klein, *Data Feminism* ch. 4; Thorp, *Living in Data* |
+| 03 | 02/08 | Review Remix documentation · Review Track/Feed data set and postcards · Graphic Design Iteration workshop · Lab: Drawing data in the browser with p5.js, and pulling live data feeds (fetch, JSON) · Tool note (optional): Figma for poster layout · Reading Presentation and Discussion | Track/Feed digital · Making Center general orientation on Canvas, plus any lab modules you need (due 02/22) | Michaelson, "Change over Time"; Li, "Function as Narrative" |
 | 04 | 02/15 | Presidents' Day · University closed | | |
-| 05 | 02/22 | Review Track/Feed posters · Reading discussion · Lecture: Data sculptures · Lab: Making Center visit and digital fabrication overview | Revised poster design · Track/Feed final documentation · Physical data concept & sketches | Chen et al., *Handbook of Data Visualization*; Offenhuber, *Autographic Design* (intro); Rankin, *Radical Cartography* (intro) |
-| 06 | 03/01 | Physical data concept & sketches · Reading discussion · Lab: p5.js, using map() and if statements to translate data, and exporting SVG files for laser cutting · Tool note (optional): Blender + Python for 3D printing | Physical data prototype | |
+| 05 | 02/22 | Review Track/Feed posters · Reading Presentation and Discussion · Lecture: Data sculptures · Lab: Making Center visit and digital fabrication overview | Revised poster design · Track/Feed final documentation · Physical data concept & sketches | Chen et al., *Handbook of Data Visualization*; Offenhuber, *Autographic Design* (intro); Rankin, *Radical Cartography* (intro) |
+| 06 | 03/01 | Physical data concept & sketches · Reading Presentation and Discussion · Lab: p5.js, using map() and if statements to translate data, and exporting SVG files for laser cutting · Tool note (optional): Blender + Python for 3D printing | Physical data prototype | |
 | 07 | 03/08 | Review physical data prototypes · Lab: Studio session: material tests and fabrication files | Physical data final | Weizman, *Forensic Architecture* (intro); Brian Foo interview (listen); van der Velden, "Research & Destroy" |
 | 08 | 03/15 | Spring Break · No classes (03/15–03/21) | | |
-| 09 | 03/22 | Physical data final · Reading discussion · Lecture: Living Archives · Lab: Overview of existing ML models, and finding and using APIs (museum and archive collection APIs) | Physical data final documentation · Living Archive: archive research and ML concepts | |
+| 09 | 03/22 | Physical data final · Reading Presentation and Discussion · Lecture: Living Archives · Lab: Overview of existing ML models, and finding and using APIs (museum and archive collection APIs) | Physical data final documentation · Living Archive: archive research and ML concepts | |
 | 10 | 03/29 | Review Living Archive research · Lab: Pose detection with ml5.js BodyPose and in-browser models with LiteRT.js | Living Archive: mockup and prototype | Onuoha, "What Is Missing Is Still There" |
-| 11 | 04/05 | Review Living Archive mockups/prototypes · Reading discussion · Lab: From model output to visualization (turning poses, labels, and other ML results into a dataset you can draw with p5.js) | Living Archive final | |
+| 11 | 04/05 | Review Living Archive mockups/prototypes · Reading Presentation and Discussion · Lab: From model output to visualization (turning poses, labels, and other ML results into a dataset you can draw with p5.js) | Living Archive final | |
 | 12 | 04/12 | Review Living Archive final | Living Archive final documentation · Data Experience: research & concepts | Bridle, *New Dark Age* ch. 1; Dunne & Raby, *Not Here, Not Now* (intro); Urist, "The Rise of the Data Artist" |
-| 13 | 04/19 | Data Experience research & concepts · Reading discussion · Lab: Prototyping with LLMs (text, conversation, and structured output) | Data Experience: mockup and prototype | Noble, *Algorithms of Oppression* (intro); Hemment et al., *Digital Public Spaces* |
-| 14 | 04/26 | Review Data Experience mockups/prototypes · Reading discussion · Lab: Generative image, sound, and video in interactive work | Data Experience final | |
+| 13 | 04/19 | Data Experience research & concepts · Reading Presentation and Discussion · Lab: Prototyping with LLMs (text, conversation, and structured output) | Data Experience: mockup and prototype | Noble, *Algorithms of Oppression* (intro); Hemment et al., *Digital Public Spaces* |
+| 14 | 04/26 | Review Data Experience mockups/prototypes · Reading Presentation and Discussion · Lab: Generative image, sound, and video in interactive work | Data Experience final | |
 | 15 | 05/03 | Data Experience final · Studio session, troubleshooting, and individual meetings | Final documentation and make up | |
 | 16 | 05/10 | Final presentations · Guest crits | | |
 
@@ -69,6 +69,7 @@ Attendance & participation 10% · Lab/lecture 10%
 - Thorp, Jer. "Data & Humans: A Love Story." Video, Library of Congress, December 21, 2016. (Week 02) https://www.youtube.com/watch?v=dfGJDF6fJtM
 - Thorp, Jer. *Living in Data: A Citizen's Guide to a Better Information Future*. MCD, 2021. (Week 02)
 - Michaelson, Dan. "Change over Time." (Week 03) https://www.linkedbyair.net/
+- D'Ignazio, Catherine, and Lauren F. Klein. *Data Feminism*. Strong Ideas. The MIT Press, 2020. (Week 02, ch. 4, "What Gets Counted Counts") https://data-feminism.mitpress.mit.edu/
 - Li, Weiyi. "Function as Narrative." 2014. (Week 03) https://veryinteractive.net/pdfs/li-functionasnarrative.pdf
 - Chen, Chun-houh, Wolfgang Härdle, and Antony Unwin, eds. *Handbook of Data Visualization*. Springer Handbooks of Computational Statistics. Springer, 2008. (Week 05)
 
@@ -77,6 +78,7 @@ Attendance & participation 10% · Lab/lecture 10%
 - Rankin, William. *Radical Cartography: How Changing Our Maps Can Change Our World*. Penguin Publishing Group, 2025. (Week 05, introduction)
 - Weizman, Eyal. *Forensic Architecture: Violence at the Threshold of Detectability*. Zone Books, 2019. (Week 07, introduction)
 - Foo, Brian. "Brian Foo: The Data-Driven DJ." Interview, Creative Disturbance podcast. (Week 07) https://creativedisturbance.org/podcast/brian-foo-the-datadriven-dj/
+- van der Velden, Daniel. "Research & Destroy: A Plea for Design as Research." *Metropolis M*, no. 2, 2006. (Week 07) https://metropolism.com/en/feature/research-destroy/
 
 ### Project 04: Living Archive
 - Onuoha, Mimi. "What Is Missing Is Still There." *Nichons-Nous Dans L'Internet*, Montreal, 2018. (Week 10) https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf
@@ -87,10 +89,6 @@ Attendance & participation 10% · Lab/lecture 10%
 - Urist, Jacoba. "The Rise of the Data Artist." *The Atlantic*, May 2015. (Week 12) https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/
 - Noble, Safiya Umoja. *Algorithms of Oppression: How Search Engines Reinforce Racism*. New York University Press, 2018. (Week 13, introduction, library login) https://www.jstor.org/stable/j.ctt1pwt9w5
 - Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. *Digital Public Spaces*. FutureEverything, 2013. (Week 13) https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf
-
-### Throughout the course
-- D'Ignazio, Catherine, and Lauren F. Klein. *Data Feminism*. Strong Ideas. The MIT Press, 2020. (Week 02, ch. 4, "What Gets Counted Counts") https://data-feminism.mitpress.mit.edu/
-- van der Velden, Daniel. "Research & Destroy: A Plea for Design as Research." *Metropolis M*, no. 2, 2006. (Week 07) https://metropolism.com/en/feature/research-destroy/
 
 ## Extra Readings
 
