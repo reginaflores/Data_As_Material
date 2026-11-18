@@ -1,9 +1,11 @@
 # Reading presentation sign-up
 
-A one-link sign-up page for the reading presentations. Students open the link, type their name and email, and press **Sign up**. The name is written into the Google Sheet and the student gets a confirmation email with their week, date and readings. No login for students.
+A one-link sign-up page for the reading presentations: https://reginaflores.github.io/Data_As_Material/signup/
 
-- `Index.html`: the page (course style). Opened on its own it shows sample data and saves nothing.
-- `Code.gs`: the Google Apps Script that serves the page and reads/writes the sheet.
+Students type their name and email and press **Sign up** on an open spot. The name is written into the Google Sheet and the student gets a confirmation email with their week, date and readings. No login for students.
+
+- `index.html`: the page, hosted on GitHub Pages (course style). Until `API` is set it runs in **preview mode**: sample data, a "nothing is saved yet" banner, no emails.
+- `Code.gs`: a Google Apps Script web app the page calls. It reads and writes the sheet and sends the confirmation emails.
 - Sheet: "Data as Material · Reading presentation sign-up (Spring 2027)" in Drive folder Data_As_Material_2026 (ID in `Code.gs`).
 
 ## Confirmation email
@@ -18,15 +20,14 @@ A one-link sign-up page for the reading presentations. Students open the link, t
 - Spots marked `(one presenter)` in the sheet are closed.
 - To move or remove someone, edit the sheet directly.
 
-## Publish it (one time, about 5 minutes)
-1. Open the sheet in Google Sheets. Menu: **Extensions → Apps Script**.
-2. In `Code.gs`, delete what's there and paste this folder's `Code.gs`.
-3. Click **+** next to Files → **HTML**, name it `Index` (no extension), and paste this folder's `Index.html`.
-4. Click **Save**, then **Deploy → New deployment**. Gear icon → **Web app**.
-   - Description: Reading sign-up
+## Turn on saving (one time, about 5 minutes)
+1. Go to https://script.google.com and click **New project**. Name it "Reading sign-up".
+2. Delete what's in `Code.gs` and paste this folder's `Code.gs`. Click **Save**.
+3. **Deploy → New deployment**. Gear icon → **Web app**.
    - Execute as: **Me**
    - Who has access: **Anyone**
-5. Click **Deploy** and authorize with your Google account. It asks for access to the sheet and to send email as you. Google warns the app is unverified because you wrote it: **Advanced → Go to (project name)**, then **Allow**.
-6. Copy the **Web app URL** (ends in `/exec`). That's the link for students.
+4. Click **Deploy** and authorize with your Google account (access to the sheet and to send email as you). Google warns the app is unverified because you wrote it: **Advanced → Go to Reading sign-up**, then **Allow**.
+5. Copy the **Web app URL** (ends in `/exec`).
+6. In `index.html`, set `var API='...';` to that URL, then commit and push. The preview banner disappears and sign-ups save.
 
-If you change the code later: **Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy**. The URL stays the same.
+If you change `Code.gs` later: **Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy**. The URL stays the same.
