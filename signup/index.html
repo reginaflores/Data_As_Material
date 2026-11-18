@@ -72,7 +72,7 @@ footer a{color:inherit;text-decoration-color:var(--green);text-decoration-thickn
   <p class="lede">Each of you leads the discussion of one week’s readings, once in the semester. Pick your week below.</p>
 
   <div class="how">
-    <div><b>01 · Sign up</b><p>Type your name and email, then press Sign up on an open spot. You’ll get a confirmation email. Everyone presents once: 11 students, 11 spots.</p></div>
+    <div><b>01 · Sign up</b><p>Type your name and email, then press Sign up on an open spot. You’ll get a confirmation email. Everyone presents once. There are 12 spots for 11 students, so one stays open.</p></div>
     <div><b>02 · Read</b><p>The readings are the ones assigned the class before your week. Links are in the syllabus.</p></div>
     <div><b>03 · Lead</b><p>Present all of the readings for your week, not just one. Summarize each, pick the passages that matter, and bring questions for the class.</p></div>
   </div>
@@ -106,10 +106,10 @@ footer a{color:inherit;text-decoration-color:var(--green);text-decoration-thickn
   var demo=[
     ['Week 02','Monday, February 1, 2027','Warde, “The Crystal Goblet”; Rock, “F*#k Content”; Parrish, New Interfaces for Textual Expression; Parrish, “Programming Is Forgetting”; Ford, “What Is Code?”',['',''] ],
     ['Week 03','Monday, February 8, 2027','Lupi, “Data Humanism”; Thorp, “Data & Humans” (video); D’Ignazio & Klein, Data Feminism ch. 4; Thorp, Living in Data',['',''] ],
-    ['Week 05','Monday, February 22, 2027','Michaelson, “Change over Time”; Li, “Function as Narrative”',['','(one presenter)'] ],
-    ['Week 06','Monday, March 1, 2027','Chen et al., Handbook of Data Visualization; Offenhuber, Autographic Design (intro); Rankin, Radical Cartography (intro)',['',''] ],
+    ['Week 05','Monday, February 22, 2027','Michaelson, “Change over Time”; Li, “Function as Narrative”; Lupi & Posavec, Dear Data (intro and a few weeks); Lupi, “1,374 Days: My Life With Long Covid” (skim: how the visuals are presented); Chayka, Filterworld (intro)',['',''] ],
+    ['Week 06','Monday, March 1, 2027','Chen et al., Handbook of Data Visualization; Offenhuber, Autographic Design (intro); Rankin, Radical Cartography (intro)',['','(one presenter)'] ],
     ['Week 09','Monday, March 22, 2027','Weizman, Forensic Architecture (intro); Brian Foo interview (listen); van der Velden, “Research & Destroy”',['','(one presenter)'] ],
-    ['Week 11','Monday, April 5, 2027','Onuoha, “What Is Missing Is Still There”',['','(one presenter)'] ],
+    ['Week 11','Monday, April 5, 2027','Onuoha, “What Is Missing Is Still There”; Crawford & Paglen, “Excavating AI”; Drucker, “Humanities Approaches to Graphical Display”; Hartman, “Venus in Two Acts”',['',''] ],
     ['Week 13','Monday, April 19, 2027','Bridle, New Dark Age ch. 1; Dunne & Raby, Not Here, Not Now (intro); Urist, “The Rise of the Data Artist”',['','(one presenter)'] ],
     ['Week 14','Monday, April 26, 2027','Noble, Algorithms of Oppression (intro); Hemment et al., Digital Public Spaces',['','(one presenter)'] ]
   ].map(function(r,i){return{row:i+2,week:r[0],date:r[1],readings:r[2],slots:r[3].map(function(v){return{name:v==='(one presenter)'?'':v,closed:v==='(one presenter)'}})}});
@@ -135,7 +135,8 @@ footer a{color:inherit;text-decoration-color:var(--green);text-decoration-thickn
       });
       weeksEl.appendChild(row);
     });
-    status.textContent=open?open+' of 11 spots open.':'Every spot is taken.';
+    var total=weeks.reduce(function(n,w){return n+w.slots.filter(function(x){return!x.closed}).length},0);
+    status.textContent=open+' of '+total+' spots open.';
   }
 
   function take(w,i,btn){

@@ -30,7 +30,7 @@ Professor: Regina Flores Mir · regina.flores@newschool.edu · Office hours by a
 | 04 | **Living Archive.** Use machine learning to create a new dataset from an archive, then visualize what it reveals. | 9–12 | 15% |
 | 05 | **Data Experience.** Use AI systems to create a data-driven experience, service, product, or installation that wouldn't be possible otherwise. | 12–16 | 20% |
 
-Attendance & participation 10% · Lab/lecture 10%
+Attendance & participation 5% · Reading Presentation and Discussion 5% · Lab/lecture 10%
 
 ## Course Outline
 
@@ -40,14 +40,14 @@ Attendance & participation 10% · Lab/lecture 10%
 | --- | --- | --- | --- | --- |
 | 01 | 01/25 | Introduction, syllabus, warm up, readings · Sign up for Reading Presentation and Discussion · Lab: HTML, CSS, and GitHub Pages setup | Remix | Warde; Rock; Parrish, *NITE*; Ford; Parrish, "Programming Is Forgetting" |
 | 02 | 02/01 | Review Remix · Reading Presentation and Discussion · Lecture: Quantified Self and data tracking · Lab: Ways to track your own data | Remix updates & documentation · Track/Feed analog · Begin data collection | Lupi, "Data Humanism"; Thorp, "Data & Humans" (watch); D'Ignazio & Klein, *Data Feminism* ch. 4; Thorp, *Living in Data* |
-| 03 | 02/08 | Review Remix documentation · Review Track/Feed data set and postcards · Graphic Design Iteration workshop · Lab: Drawing data in the browser with p5.js, and pulling live data feeds (fetch, JSON) · Tool note (optional): Figma for poster layout · Reading Presentation and Discussion | Track/Feed digital · Making Center general orientation on Canvas, plus any lab modules you need (due 02/22) | Michaelson, "Change over Time"; Li, "Function as Narrative" |
+| 03 | 02/08 | Review Remix documentation · Review Track/Feed data set and postcards · Graphic Design Iteration workshop · Lab: Drawing data in the browser with p5.js, and pulling live data feeds (fetch, JSON) · Tool note (optional): Figma for poster layout · Reading Presentation and Discussion | Track/Feed digital · Making Center general orientation on Canvas, plus any lab modules you need (due 02/22) | Michaelson, "Change over Time"; Li, "Function as Narrative"; Lupi & Posavec, *Dear Data* (intro and a few weeks); Lupi, "1,374 Days: My Life With Long Covid" (skim: how the visuals are presented); Chayka, *Filterworld* (intro) |
 | 04 | 02/15 | Presidents' Day · University closed | | |
 | 05 | 02/22 | Review Track/Feed posters · Reading Presentation and Discussion · Lecture: Data sculptures · Lab: Making Center visit and digital fabrication overview | Revised poster design · Track/Feed final documentation · Physical data concept & sketches | Chen et al., *Handbook of Data Visualization*; Offenhuber, *Autographic Design* (intro); Rankin, *Radical Cartography* (intro) |
 | 06 | 03/01 | Physical data concept & sketches · Reading Presentation and Discussion · Lab: p5.js, using map() and if statements to translate data, and exporting SVG files for laser cutting · Tool note (optional): Blender + Python for 3D printing | Physical data prototype | |
 | 07 | 03/08 | Review physical data prototypes · Lab: Studio session: material tests and fabrication files | Physical data final | Weizman, *Forensic Architecture* (intro); Brian Foo interview (listen); van der Velden, "Research & Destroy" |
 | 08 | 03/15 | Spring Break · No classes (03/15–03/21) | | |
 | 09 | 03/22 | Physical data final · Reading Presentation and Discussion · Lecture: Living Archives · Lab: Overview of existing ML models, and finding and using APIs (museum and archive collection APIs) | Physical data final documentation · Living Archive: archive research and ML concepts | |
-| 10 | 03/29 | Review Living Archive research · Lab: Pose detection with ml5.js BodyPose and in-browser models with LiteRT.js | Living Archive: mockup and prototype | Onuoha, "What Is Missing Is Still There" |
+| 10 | 03/29 | Review Living Archive research · Lab: Pose detection with ml5.js BodyPose and in-browser models with LiteRT.js | Living Archive: mockup and prototype | Onuoha, "What Is Missing Is Still There"; Crawford & Paglen, "Excavating AI"; Drucker, "Humanities Approaches to Graphical Display"; Hartman, "Venus in Two Acts" |
 | 11 | 04/05 | Review Living Archive mockups/prototypes · Reading Presentation and Discussion · Lab: From model output to visualization (turning poses, labels, and other ML results into a dataset you can draw with p5.js) | Living Archive final | |
 | 12 | 04/12 | Review Living Archive final | Living Archive final documentation · Data Experience: research & concepts | Bridle, *New Dark Age* ch. 1; Dunne & Raby, *Not Here, Not Now* (intro); Urist, "The Rise of the Data Artist" |
 | 13 | 04/19 | Data Experience research & concepts · Reading Presentation and Discussion · Lab: Prototyping with LLMs (text, conversation, and structured output) | Data Experience: mockup and prototype | Noble, *Algorithms of Oppression* (intro); Hemment et al., *Digital Public Spaces* |
@@ -68,6 +68,9 @@ Attendance & participation 10% · Lab/lecture 10%
 - Lupi, Giorgia. "Data Humanism: The Revolution Will Be Visualized." *Print Magazine*, January 30, 2017. (Week 02) https://medium.com/@giorgialupi/data-humanism-the-revolution-will-be-visualized-31486a30dbfb
 - Thorp, Jer. "Data & Humans: A Love Story." Video, Library of Congress, December 21, 2016. (Week 02) https://www.youtube.com/watch?v=dfGJDF6fJtM
 - Thorp, Jer. *Living in Data: A Citizen's Guide to a Better Information Future*. MCD, 2021. (Week 02)
+- Lupi, Giorgia, and Stefanie Posavec. *Dear Data*. Princeton Architectural Press, 2016. (Week 03, introduction and a few weeks of postcards) http://www.dear-data.com/
+- Lupi, Giorgia. "1,374 Days: My Life With Long Covid." *The New York Times*, Opinion, December 14, 2023. (Week 03; skim, don't read closely: focus on how the visuals are presented) https://www.nytimes.com/interactive/2023/12/14/opinion/my-life-with-long-covid.html
+- Chayka, Kyle. *Filterworld: How Algorithms Flattened Culture*. Doubleday, 2024. (Week 03, introduction) https://www.kylechayka.com/filterworld
 - Michaelson, Dan. "Change over Time." (Week 03) https://www.linkedbyair.net/
 - D'Ignazio, Catherine, and Lauren F. Klein. *Data Feminism*. Strong Ideas. The MIT Press, 2020. (Week 02, ch. 4, "What Gets Counted Counts") https://data-feminism.mitpress.mit.edu/
 - Li, Weiyi. "Function as Narrative." 2014. (Week 03) https://veryinteractive.net/pdfs/li-functionasnarrative.pdf
@@ -81,6 +84,9 @@ Attendance & participation 10% · Lab/lecture 10%
 - van der Velden, Daniel. "Research & Destroy: A Plea for Design as Research." *Metropolis M*, no. 2, 2006. (Week 07) https://metropolism.com/en/feature/research-destroy/
 
 ### Project 04: Living Archive
+- Crawford, Kate, and Trevor Paglen. "Excavating AI: The Politics of Images in Machine Learning Training Sets." 2019. (Week 10) https://excavating.ai/
+- Drucker, Johanna. "Humanities Approaches to Graphical Display." *Digital Humanities Quarterly* 5, no. 1 (2011). (Week 10) https://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html
+- Hartman, Saidiya. "Venus in Two Acts." *Small Axe* 12, no. 2 (2008). (Week 10, library login) https://read.dukeupress.edu/small-axe/article/12/2/1/32467/Venus-in-Two-Acts
 - Onuoha, Mimi. "What Is Missing Is Still There." *Nichons-Nous Dans L'Internet*, Montreal, 2018. (Week 10) https://static1.squarespace.com/static/5147c437e4b096a97cf3defd/t/5af0698e8a922ddd8dd4cd87/1525705104023/nichons-nous-onuoha1.pdf
 
 ### Project 05: Data Experience
@@ -100,11 +106,9 @@ Additional readings beyond the syllabus, organized by project. Optional unless a
 
 ### Project 02: Track
 - Lupi, Giorgia, and Phillip Cox. *Speak Data*. Chronicle Books, 2025. (pairs with Lupi, "Data Humanism")
-- Lupi, Giorgia. "1,374 Days: My Life with Long COVID." *The New York Times*, 2024. (a visual op-ed built from self-tracked data; winner of the 2025 Compasso d'Oro; see also her 2024 TED talk, "What Long Covid Has Taught Me About Life (and Data)")
 - Bremer, Nadieh, and Shirley Wu. *Data Sketches*. CRC Press, 2021. (pairs with Chen et al., *Handbook of Data Visualization*)
 - Cairo, Alberto. *The Art of Insight*. Wiley, 2023. (pairs with Chen et al.)
 - Wilke, Claus O. *Fundamentals of Data Visualization*. 2019. https://clauswilke.com/dataviz/ (reference for the digital poster stage)
-- Chayka, Kyle. *Filterworld: How Algorithms Flattened Culture*. Doubleday, 2024. https://www.kylechayka.com/filterworld (how recommendation feeds shape taste; a counterpoint to tracking your own data)
 - *Explore Explain*. Podcast hosted by Andy Kirk. https://coolinfographics.com/dataviz-shows (the design story behind specific visualizations)
 - *Data Viz Today*. Podcast hosted by Alli Torban. https://dataviztoday.com/ (practical design tactics and interviews)
 - *Giorgia Lupi: Data Humanism*. Exhibition, Gallerie d'Italia, Vicenza, 2026. https://gallerieditalia.com/en/vicenza/exhibitions-and-initiatives/exhibitions/2026/04/30/giorgia-lupi-data-humanism-in-vicenza/ (Lupi's first solo exhibition)
@@ -157,7 +161,6 @@ Additional readings beyond the syllabus, organized by project. Optional unless a
 - Sutton, Richard. "The Bitter Lesson." 2019. http://www.incompleteideas.net/IncIdeas/BitterLesson.html
 
 #### Images, datasets, and what gets left out
-- Crawford, Kate, and Trevor Paglen. "Excavating AI: The Politics of Images in Machine Learning Training Sets." 2019. https://excavating.ai/
 - Steyerl, Hito. "Mean Images." *New Left Review*, no. 140/141, 2023.
 - Salvaggio, Eryk. "How to Read an AI Image." *Cybernetic Forests*, 2022.
 - Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" *FAccT*, 2021.
