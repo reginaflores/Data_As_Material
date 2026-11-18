@@ -50,7 +50,7 @@ Attendance & participation 5% · Reading Presentation and Discussion 5% · Lab/l
 | 10 | 03/29 | Review Living Archive research · Lab: Pose detection with ml5.js BodyPose and in-browser models with LiteRT.js | Living Archive: mockup and prototype | Onuoha, "What Is Missing Is Still There"; Crawford & Paglen, "Excavating AI"; Drucker, "Humanities Approaches to Graphical Display"; Hartman, "Venus in Two Acts" |
 | 11 | 04/05 | Review Living Archive mockups/prototypes · Reading Presentation and Discussion · Lab: From model output to visualization (turning poses, labels, and other ML results into a dataset you can draw with p5.js) | Living Archive final | |
 | 12 | 04/12 | Review Living Archive final | Living Archive final documentation · Data Experience: research & concepts | Bridle, *New Dark Age* ch. 1; Dunne & Raby, *Not Here, Not Now* (intro); Urist, "The Rise of the Data Artist" |
-| 13 | 04/19 | Data Experience research & concepts · Reading Presentation and Discussion · Lab: Prototyping with LLMs (text, conversation, and structured output) | Data Experience: mockup and prototype | Noble, *Algorithms of Oppression* (intro); Hemment et al., *Digital Public Spaces* |
+| 13 | 04/19 | Data Experience research & concepts · Reading Presentation and Discussion · Lab: Prototyping with LLMs (text, conversation, and structured output) | Data Experience: mockup and prototype | Noble, *Algorithms of Oppression* (intro); Hemment et al., *Digital Public Spaces*; Chiang, "ChatGPT Is a Blurry JPEG of the Web" |
 | 14 | 04/26 | Review Data Experience mockups/prototypes · Reading Presentation and Discussion · Lab: Generative image, sound, and video in interactive work | Data Experience final | |
 | 15 | 05/03 | Data Experience final · Studio session, troubleshooting, and individual meetings | Final documentation and make up | |
 | 16 | 05/10 | Final presentations · Guest crits | | |
@@ -94,6 +94,7 @@ Attendance & participation 5% · Reading Presentation and Discussion 5% · Lab/l
 - Dunne, Anthony, and Fiona Raby. *Not Here, Not Now: Speculative Thought, Impossibility, and the Design Imagination*. The MIT Press, 2025. (Week 12, introduction, library login) https://direct.mit.edu/books/book/5962/Not-Here-Not-NowSpeculative-Thought-Impossibility
 - Urist, Jacoba. "The Rise of the Data Artist." *The Atlantic*, May 2015. (Week 12) https://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/
 - Noble, Safiya Umoja. *Algorithms of Oppression: How Search Engines Reinforce Racism*. New York University Press, 2018. (Week 13, introduction, library login) https://www.jstor.org/stable/j.ctt1pwt9w5
+- Chiang, Ted. "ChatGPT Is a Blurry JPEG of the Web." *The New Yorker*, February 9, 2023. (Week 13) https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web
 - Hemment, Drew, Bill Thompson, José Luis de Vicente, and Rachel Cooper. *Digital Public Spaces*. FutureEverything, 2013. (Week 13) https://discovery.dundee.ac.uk/ws/files/20381952/DPS.pdf
 
 ## Extra Readings
@@ -131,7 +132,6 @@ Additional readings beyond the syllabus, organized by project. Optional unless a
 - Foster, Nick. "The Future Mundane." *Core77*, October 7, 2013. (Spring 2025 syllabus)
 - Anadol, Refik. *Machine Dreams: Rainforest*. Dataland, Los Angeles, 2026. (pairs with Urist, "The Rise of the Data Artist")
 - Herndon, Holly, and Mat Dryhurst. *The Call*. Serpentine, 2024. (a contrasting model built on consent)
-- Chiang, Ted. "ChatGPT Is a Blurry JPEG of the Web." *The New Yorker*, 2023. (pairs with Ford, "What Is Code?")
 - Wolfram, Stephen. *What Is ChatGPT Doing … and Why Does It Work?* 2023. (pairs with Ford)
 - Buolamwini, Joy. *Unmasking AI: My Mission to Protect What Is Human in a World of Machines*. Random House, 2023. https://www.unmasking.ai/ (bias in computer vision; relevant to any project using face or image recognition)
 - Bender, Emily M., and Alex Hanna. *The AI Con: How to Fight Big Tech's Hype and Create the Future We Want*. Harper, 2025. https://thecon.ai/ (a clear, structured argument against AI hype)
