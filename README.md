@@ -6,6 +6,7 @@ Professor: Regina Flores Mir · regina.flores@newschool.edu · Office hours by a
 
 **Syllabus:** https://reginaflores.github.io/Data_As_Material/
 **Course catalog:** https://courses.newschool.edu/courses/PSAM5170/
+**Making a Project (one-page handout):** https://reginaflores.github.io/Data_As_Material/handouts/making-a-project.html
 
 | | |
 | --- | --- |

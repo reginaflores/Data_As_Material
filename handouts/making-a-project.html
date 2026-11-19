@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Making a Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #16181d; --muted: #5d6470; --faint: #8a909b;
+    --line: #d2d6dc; --line-strong: #9fa6b2; --link: #e42a1d; --brand: #e42a1d;
+    --remix-a: #ffbb00; --track-a: #32ff00; --phys-a: #64d7ff; --arch-a: #b48cff; --exp-a: #ff6e00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111316; --fg: #eceef1; --muted: #a4abb6; --faint: #7c8390;
+      --line: #2a2e35; --line-strong: #3a3f48; --link: #ff6b5f; --brand: #ff4b3e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111316; --fg: #eceef1; --muted: #a4abb6; --faint: #7c8390;
+    --line: #2a2e35; --line-strong: #3a3f48; --link: #ff6b5f; --brand: #ff4b3e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 14px/1.5 Inter, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; }
+  main { max-width: 880px; margin: 0 auto; padding: 40px 16px 64px; }
+  p { margin: 0 0 6px; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 10px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 700; margin: 0 0 8px; }
+  .lede { font-size: 16px; color: var(--muted); margin: 0 0 24px; max-width: 60ch; }
+  h2 { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); margin: 26px 0 10px; }
+
+  /* Tenets: peers, so they look the same */
+  .tenets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 1px solid var(--line-strong); padding-top: 12px; }
+  .tenets h3 { font-size: 15px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .tenets p { color: var(--muted); }
+
+  /* Stages */
+  .stages { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+  .stages li { display: grid; grid-template-columns: 28px 150px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .stages .n { font-size: 12px; font-weight: 700; color: var(--faint); padding-top: 2px; }
+  .stages h3 { font-size: 15px; font-weight: 700; margin: 0; }
+  .stages .lens { font-size: 11.5px; color: var(--faint); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+  .stages .ask { font-weight: 500; }
+  .stages .out { color: var(--muted); }
+  .stages .out b { color: var(--fg); font-weight: 600; }
+
+  /* Projects: the course's project colors identify each project */
+  .projects { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .proj { border-left: 4px solid var(--a); padding: 2px 0 2px 10px; }
+  .proj .num { font-size: 11px; font-weight: 700; color: var(--faint); }
+  .proj h3 { font-size: 13.5px; font-weight: 700; margin: 0 0 2px; }
+  .proj p { font-size: 12.5px; color: var(--muted); margin: 0; }
+  .remix { --a: var(--remix-a); } .track { --a: var(--track-a); } .phys { --a: var(--phys-a); }
+  .arch { --a: var(--arch-a); } .exp { --a: var(--exp-a); }
+
+  /* Crit checklist */
+  .check { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); padding-top: 10px; }
+  .check li { padding-left: 20px; position: relative; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 4px; width: 11px; height: 11px; border: 1.5px solid var(--line-strong); border-radius: 2px; }
+  .check b { font-weight: 600; }
+  .foot { margin-top: 20px; font-size: 12px; color: var(--faint); }
+
+  @media (max-width: 720px) {
+    .tenets, .check { grid-template-columns: 1fr; }
+    .projects { grid-template-columns: 1fr 1fr; }
+    .stages li { grid-template-columns: 24px 1fr; }
+    .stages li > div:last-child { grid-column: 2; }
+  }
+  @page { size: letter; margin: 0.45in; }
+  @media print {
+    :root { --bg: #fff; --fg: #16181d; --muted: #4a505a; --faint: #7a808a; --line: #d2d6dc; --line-strong: #9fa6b2; --link: #e42a1d; --brand: #e42a1d; }
+    body { font-size: 10.5px; line-height: 1.4; }
+    main { max-width: none; padding: 0; }
+    h1 { font-size: 30px; } .lede { font-size: 12.5px; margin-bottom: 14px; }
+    h2 { margin: 14px 0 6px; font-size: 10px; }
+    .tenets h3, .stages h3 { font-size: 12px; }
+    .stages li { padding: 6px 0; grid-template-columns: 22px 120px 1fr; }
+    .proj h3 { font-size: 11px; } .proj p { font-size: 9.5px; }
+    .foot { margin-top: 10px; font-size: 9.5px; }
+    a { color: inherit; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Data as Material · PSAM 5170 · Spring 2027</p>
+  <h1>Making a Project</h1>
+  <p class="lede">Every project in this course runs through the same loop. The data is your material, and the form you give it is your argument.</p>
+
+  <h2>Three ideas to hold on to</h2>
+  <div class="tenets">
+    <div><h3>Question before medium</h3><p>Know what you want to find out or say before you pick p5.js, plywood, or a model. If you can only describe the tool, you don't have a concept yet.</p></div>
+    <div><h3>The translation is the work</h3><p>Every choice about how data becomes form (scale, color, material, order, sound) carries meaning. Make those choices on purpose and be able to explain them.</p></div>
+    <div><h3>Prototype to answer a question</h3><p>A prototype tests one thing. Hand it to someone and say "try it." A slide deck about your idea is not a prototype.</p></div>
+  </div>
+
+  <h2>The loop</h2>
+  <ol class="stages">
+    <li><span class="n">01</span><div><h3>Question</h3><span class="lens">Concept</span></div>
+      <div><p class="ask">What data, and why? What are you curious about, and what might it show that you didn't know?</p>
+      <p class="out">Who collected this data, and what did they leave out? Find 2–3 precedents and say how yours is different. <b>Bring:</b> a few sentences on your concept and your precedents.</p></div></li>
+    <li><span class="n">02</span><div><h3>Sketch</h3><span class="lens">Form &amp; material</span></div>
+      <div><p class="ask">How will the data become form? Start on paper.</p>
+      <p class="out">Write your rules: which part of the data drives which property. Name 2–3 qualities you want people to feel (e.g. quiet, urgent, intimate). <b>Bring:</b> sketches and your mapping rules.</p></div></li>
+    <li><span class="n">03</span><div><h3>Prototype &amp; test</h3><span class="lens">Experience</span></div>
+      <div><p class="ask">Can someone read it? Do your qualities come across? What do people actually do with it?</p>
+      <p class="out">Make it fast and cheap, then test it with someone, ideally from outside this class. Watch before you explain. <b>Bring:</b> the prototype and what you learned. Read: Houde &amp; Hill, <a href="https://hci.stanford.edu/courses/cs247/2012/readings/WhatDoPrototypesPrototype.pdf">What Do Prototypes Prototype?</a></p></div></li>
+    <li><span class="n">04</span><div><h3>Make</h3><span class="lens">Implementation</span></div>
+      <div><p class="ask">Build it with the real tools and fold in the crit feedback.</p>
+      <p class="out">The finished piece should make sense without you standing next to it. Instructions are fine; a backstory shouldn't be required. If a technical piece won't work in time, solve it with design and presentation.</p></div></li>
+    <li><span class="n">05</span><div><h3>Document</h3><span class="lens">Communication</span></div>
+      <div><p class="ask">Could a stranger understand the project from your page alone?</p>
+      <p class="out">On your GitHub Pages site: concept, data source, mapping rules, process images (sketches, failed tests too), final images or video, and what you'd change. Name every dataset, model, and tool you used.</p></div></li>
+  </ol>
+
+  <h2>What the translation is in each project</h2>
+  <div class="projects">
+    <div class="proj remix"><span class="num">01</span><h3>Remix</h3><p>A text you didn't write, given 20 forms. Content stays, form changes.</p></div>
+    <div class="proj track"><span class="num">02</span><h3>Track or Feed</h3><p>Your own data or a live feed, drawn on paper first, then on screen.</p></div>
+    <div class="proj phys"><span class="num">03</span><h3>Physical Data</h3><p>A dataset given material form. The material's associations carry meaning too.</p></div>
+    <div class="proj arch"><span class="num">04</span><h3>Living Archive</h3><p>An archive run through ML to make a new dataset, then a visualization of what it shows.</p></div>
+    <div class="proj exp"><span class="num">05</span><h3>Data Experience</h3><p>AI systems used to make something people move through, use, or take part in.</p></div>
+  </div>
+
+  <h2>Before crit, can you answer these?</h2>
+  <ul class="check">
+    <li><b>Concept.</b> What is the project about, in one sentence, without naming the tool?</li>
+    <li><b>Design.</b> Why does it look, feel, or sound this way? What would change if you changed the mapping?</li>
+    <li><b>Communication.</b> What do you want people to notice, and does the work show it without you explaining?</li>
+    <li><b>Technical.</b> Does your data translation method work, and can you show how you built it?</li>
+  </ul>
+
+  <p class="foot">The four checks match the rubric categories in the <a href="https://reginaflores.github.io/Data_As_Material/">syllabus</a>.</p>
+</main>
+</body>
+</html>
